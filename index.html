@@ -8,14 +8,35 @@
 <body 
     ng-app="example" 
     ng-controller="mainController as ctrl"
+    ng-cloak
 >
-    <div class="container" ng-cloak>
-        <h1>filter-composer</h1>
-        <filter-composer
-            filters-list="ctrl.filtersList"
-            filters-model="ctrl.filtersModel"
-            configuration="ctrl.configuration"
-        ></filter-composer>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>filter-composer</h1>
+                <div class="ct-form">
+                    <ng-form>
+                        <filter-composer
+                            filters-list="ctrl.filtersList"
+                            filters-model="ctrl.filtersModel"
+                                    configuration="ctrl.configuration"
+                                >
+                        </filter-composer>
+                    </ng-form>
+                </div>  
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h1>filter model</h1>
+            <div class="col">
+                <textarea 
+                    style="height:480px;width:640px;resize:none"
+                    ng-bind="ctrl.filtersModel | json"
+                >
+                </textarea>
+            </div>
+        </div>
     </div>
 </body>
 </html>

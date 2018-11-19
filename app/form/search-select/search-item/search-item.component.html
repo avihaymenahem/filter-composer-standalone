@@ -1,0 +1,7 @@
+<div class="display-value" ng-class="{'current': searchItemComponentCtrl.isSelected}">
+        <span class="ct-search-value-container" attr-auto="search-select-option-value">
+            {{searchItemComponentCtrl.value}}
+        </span>
+    <span ng-if="searchItemComponentCtrl.isSelected">({{::searchItemComponentCtrl.selectedPlaceholder}})</span>
+</div>
+<ng-transclude></ng-transclude>

@@ -88,7 +88,7 @@ function FilterComposerController($scope) {
                 // check if equals one, since location filter counts as one
                 if (ctrl.scope.includedFilters.length == 1) {
                     delete ctrl.scope.includedFilters;
-                    remove(ctrl.scope.filtersModel.values, {
+                    _.remove(ctrl.scope.filtersModel.values, {
                         type: "AND"
                     });
                 }
@@ -103,7 +103,7 @@ function FilterComposerController($scope) {
                 // check if equals one, since location filter counts as one
                 if (ctrl.scope.excludedFilters.length == 1) {
                     delete ctrl.scope.excludedFilters;
-                    remove(ctrl.scope.filtersModel.values, {
+                    _.remove(ctrl.scope.filtersModel.values, {
                         type: "NOT"
                     });
                 }
@@ -116,7 +116,7 @@ function FilterComposerController($scope) {
         ctrl.scope.includedFilters.splice(idx, 1);
         if (ctrl.scope.includedFilters.length == 0) {
             delete ctrl.scope.includedFilters;
-            remove(ctrl.scope.filtersModel.values, {
+            _.remove(ctrl.scope.filtersModel.values, {
                 type: "AND"
             });
         }

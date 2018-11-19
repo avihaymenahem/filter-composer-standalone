@@ -1,0 +1,15 @@
+@import '../../../../assets/css/colors';
+@import '../../../../assets/css/variables';
+ct-search-item {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    & > .display-value {
+        white-space: nowrap;
+        flex: 1;
+    }
+    & > ng-transclude {
+        margin: 0 5px 0 15px;
+    }
+}

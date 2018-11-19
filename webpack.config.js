@@ -24,6 +24,10 @@ module.exports = {
                 loader: ['babel-loader'] // which transplier/compiler/plugin to compile files
             },
             {
+                test: /\.ts$/,
+                loader : 'ts-loader'
+            },
+            {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,

@@ -1,0 +1,87 @@
+@import '../../assets/css/colors';
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+  &::placeholder               {@content}
+}
+
+.ct-form {
+
+  textarea,
+  input {
+    @include placeholder {
+      font-style:italic;
+      color: $warm-gray;
+    }
+  }
+
+  .ct-error-message {
+    color: red;
+  }
+
+  .ct-form-control-checkBox {
+    padding-left: 19px;
+   
+    &.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .checkbox-off, .checkbox-on {
+      margin-top: -2px;
+    }
+  }
+
+  .ct-form-control-radioButton {
+    padding-left: 25px;
+    span {
+      position: absolute;
+      top: 0px;
+      left: 2px;
+    }
+  }
+  .ct-form-control-checkBox,
+  .ct-form-control-radioButton,
+  label.ct-form-control-radioButton {
+    display: block;
+    margin-bottom: 0;
+    position: relative;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+     
+      &:hover, &:checked, &.checked{
+        color: $c-2;
+        .radio-btn-off, .checkbox-off {
+          color: $c-2;
+        }
+      }
+    }
+
+    .ct-form-control-indicator {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      
+      &.radio-btn-off:hover::after, &.checkbox-off:hover::after {
+        color: $c-2;
+      }
+    }
+  }
+
+  .ct-form-control-textBox.required {
+    label:before {
+      content: "*";
+      width: 10px;
+      height: 10px;
+      color: red;
+      font-weight: bold;
+      margin-right: 2px;
+    }
+  }
+}

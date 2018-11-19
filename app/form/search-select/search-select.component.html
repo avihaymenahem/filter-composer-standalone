@@ -1,0 +1,54 @@
+<div class="ct-search-select-wrapper" ng-click="searchComponentCtrl.isActive=true" click-outside="searchComponentCtrl.onOutside()">
+    <div class="ct-search-select-field-wrapper" attr-auto="search-select-area">
+        <div
+             class="form-control-textbox" ng-class="{ required: searchComponentCtrl.required, active: searchComponentCtrl.isActive }">
+            <input ng-disabled="searchComponentCtrl.disabled"
+                   name="{{searchComponentCtrl.name}}"
+                   maxlength="{{searchComponentCtrl.maxlength}}"
+                   type="text"
+                   class="text-input"
+                   ng-required="searchComponentCtrl.required"
+                   autocomplete="off"
+                   ng-model="searchComponentCtrl.value"
+                   placeholder="{{searchComponentCtrl.placeholder}}"
+                   ng-focus="searchComponentCtrl.onFocus()"/>
+            <span class="iconFont down-arrow" ng-click="searchComponentCtrl.toggleSelect()"></span>
+        </div>
+
+    </div>
+    <div class="ct-search-select-dropdown" ng-show="!searchComponentCtrl.dropdownClosed">
+        <ul class="ct-search-select-dropdown-body">
+            <li class="ct-search-select-dropdown-container ct-dd-option"
+                attr-auto="search-select-option"
+                ng-repeat="option in searchComponentCtrl.filteredOptions track by $index"
+                ng-click="searchComponentCtrl.selectOption(option)"
+                title="{{ option.value }}">
+                <ct-search-item option="option"
+                                selected-placeholder="searchComponentCtrl.selectedPlaceholder"
+                                is-selected="searchComponentCtrl.isSelected(option)"
+                                display-prop="searchComponentCtrl.displayProp"
+                                search-term="searchComponentCtrl.value">
+                    <span class="right-item">
+                        <span class="icon-font question"
+                              ct-simple-tooltip-template=""
+                              ct-tooltip-placement="right">
+                            <ct-simple-tooltip-body>
+                                <!-- <span>{{'TOOLTIPS.FILTER_' + option.tooltip.id | translate }}</span> -->
+                                <!-- <ct-learn-more link="{{ :: 'LINKS.FILTER_' + option.tooltip.id | translate}}"></ct-learn-more> -->
+                            </ct-simple-tooltip-body>
+                        </span>
+                    </span>
+                </ct-search-item>
+            </li>
+            <li class="ct-search-dropdown-container no-data"
+                ng-click="searchComponentCtrl.preventClose()"
+                ng-if="!searchComponentCtrl.options.length">{{searchComponentCtrl.noDataPlaceholder}}
+            </li>
+            <li class="ct-search-dropdown-container no-filtered-data"
+                ng-click="searchComponentCtrl.preventClose()"
+                ng-if="searchComponentCtrl.options.length && !searchComponentCtrl.filteredOptions.length">
+                {{searchComponentCtrl.noFilteredDataPlaceholder}}
+            </li>
+        </ul>
+    </div>
+</div>

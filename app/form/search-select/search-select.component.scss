@@ -1,0 +1,108 @@
+@import '../../../assets/css/colors';
+@import '../../../assets/css/variables';
+.ng-invalid.ng-touched {
+  .ct-search-select-wrapper {
+    input {
+      border: 1px solid $red;
+      transition: none;
+    }
+  }
+}
+.ct-search-select-wrapper {
+  position: relative;
+  > .ct-search-select-field-wrapper {
+    .form-control-textbox {
+      width: 170px;
+      & > input {
+        padding-right: 31px;
+        overflow: hidden;
+        display: block;
+        text-overflow: ellipsis;
+
+        &:focus{
+          &::-webkit-input-placeholder { color:transparent; }
+          &:-moz-placeholder { color:transparent; }
+          &::-moz-placeholder { color:transparent; }
+          &:-ms-input-placeholder { color:transparent; }
+        }
+
+      }
+      &.active {
+        .text-input {
+          border: 1px solid #8882d8;
+          box-shadow: inset 0 0 0 3px rgba(136, 130, 216, 0.15);
+        }
+      }
+    }
+    .form-control-textbox .iconFont {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 15px;
+      &.closeX {
+        font-size: $font-size-sm;
+        color: $text-light;
+      }
+
+      &.down-arrow {
+        font-size: 17px;
+        text-align: center;
+        color: $text-medium;
+        width: 31px;
+        height: 29px;
+        background-image: $dd-button-gradient;
+        border-left: 1px solid $border-color;
+        position: absolute;
+        top: 1px;
+        right: -14px;
+        margin-right: 15px;
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+  > .ct-search-select-dropdown {
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    background: $white;
+    min-width: 100%;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      max-height: #{10 * 26 + 26/2}px;
+      box-shadow: $box-shadow;
+      overflow-y: auto;
+      color: $text-dark;
+
+      &::-webkit-scrollbar-thumb {
+        visibility: visible;
+      }
+      > li {
+        padding-left: 16px;
+        line-height: 26px;
+        font-size: $font-size-xs;
+        font-weight: normal;
+        .current {
+          color: $text-darkest;
+          font-weight: 600;
+        }
+        &.no-data:hover, &.no-filtered-data:hover {
+          cursor: default;
+          background: $white;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: $bg-dark;
+          border-bottom: 1px #cccccc;
+        }
+
+        &.selected {
+          color: $text-darkest;
+        }
+      }
+    }
+  }
+}
