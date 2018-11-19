@@ -1,0 +1,139 @@
+@import './variables';
+
+.arrow-down {
+    width: 0px;
+    height: 0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;
+
+    &.purple {
+        border-top-color: #403a74
+    }
+    &.white {
+        border-top-color: #fff;
+    }
+}
+
+.ct-grid-table {
+    font-family: $font-family;
+    font-size: $font-size-xs;
+    color: $text-dark;
+    height: 70vh;
+    border: 0;
+    cursor: default;
+
+    .ui-grid-viewport {
+        width: 100% !important;
+    }
+
+    .ui-grid-header {
+        font-size: 10px;
+        font-weight: 600;
+        height: 34px;
+        padding: 8px 0;
+        background-color: $bg-dark;
+        border-bottom: none;
+    }
+
+    .ui-grid-header-cell {
+        padding-right: 10px;
+        border: 0;
+
+        .ui-grid-column-resizer.right {
+            border-right: 0;
+        }
+    }
+
+    .ui-grid-top-panel {
+        background: none;
+
+        .ui-grid-cell-contents {
+            padding: 2px 0 0px 0;
+
+            &:hover {
+                span.ui-grid-invisible {
+                    visibility: visible;
+
+                    i {
+                        &::before {
+                            font-family: 'ctIcon';
+                            font-size: 10px;
+                            color: $text-medium;
+                            content: 'g';
+                        }
+                    }
+                }
+            }
+        } 
+
+        .ui-grid-icon-up-dir,
+        .ui-grid-icon-down-dir {
+            &::before {
+                font-family: 'ctIcon';
+                font-size: 10px;
+                color: $text-medium;
+            }
+        }
+        
+        .ui-grid-icon-up-dir {
+            &::before {
+                content: 's';
+            }
+        }
+
+        .ui-grid-icon-down-dir {
+            &::before {
+                content: 'g';
+            }
+        }
+    }
+
+    .ui-grid-cell {       
+        border: 0;
+
+        .ui-grid-cell-contents{
+            padding: 0;
+        }
+
+        a:hover, 
+        a:visited,
+        a:focus {
+            text-decoration: none;
+        }
+    }
+
+    .ui-grid-row {
+        border-bottom: $background-gray 1px solid;
+        line-height: 35px;
+        height: 34px;
+
+        &:hover {
+            background-color: $hover-bg;
+        }
+        
+        .ui-grid-cell {
+            background: none;
+            border-bottom: 0;
+        }
+    }
+
+    .centered {
+        text-align: center;
+    }
+
+    .aligned-right {
+        text-align: right;
+    }
+
+    .empty-table-text {
+        text-align: center;
+        font-size: $font-size-xl;
+        font-weight: bold;
+        color: $text-dark;
+        width: 100%;
+        position: absolute;
+        bottom: 70%;
+        z-index: 300;
+    }
+}

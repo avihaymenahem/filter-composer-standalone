@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>filterComposer</title>
+</head>
+<body 
+    ng-app="example" 
+    ng-controller="mainController as ctrl"
+>
+    <div class="container" ng-cloak>
+        <h1>filter-composer</h1>
+        <filter-composer
+            filters-list="ctrl.filtersList"
+            filters-model="ctrl.filtersModel"
+            configuration="ctrl.configuration"
+        ></filter-composer>
+    </div>
+</body>
+</html>

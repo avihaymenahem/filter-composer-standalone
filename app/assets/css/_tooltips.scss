@@ -1,0 +1,99 @@
+@import "variables";
+@import "colors";
+
+%popover {
+    font-family: $font-family;
+    font-size: $font-size-xxs;
+    font-weight: 400;
+    color: $white;
+    max-width: 405px;
+    line-height: normal;
+    padding: 6px 8px;
+    background-color: $bg-tooltip;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+    z-index: $popover-z-index;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.popover {
+    @extend %popover;
+    &.bottom {
+        margin-top: 0;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .popover-content {
+        padding: 0;
+    }
+}
+
+//hightchart tooltip
+.highcharts-tooltip.highcharts-label > span {
+    display: block;
+    font-family: $font-family !important;
+    font-size: $font-size-xxs !important;
+    color: $white !important;
+    text-shadow: none;
+    line-height: 17px;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $bg-tooltip !important;
+    box-shadow: none;
+    border: none;
+    border-radius: $input-border-radius;
+
+    & > div {
+        color: $white !important;
+        background-color: $bg-tooltip !important;
+    }
+
+    .metric-chart & {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+}
+
+//dataTooltip
+@mixin dataTooltip($top: 0, $right: auto, $bottom: auto, $left: 60px) {
+    position: relative;
+
+    &:after {
+        content: attr(data-tooltip);
+        @extend %popover;
+        max-width: unset;
+        width: max-content;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+        pointer-events: none;
+        z-index: 99;
+        -webkit-transition: visibility 0s 1s linear, opacity 0.3s ease;
+        transition: visibility 0s 1s linear, opacity 0.3s ease;
+    }
+
+    &:hover:after {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: opacity 0.3s 0.6s ease-in;
+        transition: opacity 0.3s 0.6s ease-in;
+    }
+}
+a.link-to {
+    color: $yellow-lighter;
+    white-space: nowrap;
+    &:hover {
+        cursor: pointer;
+    }
+}

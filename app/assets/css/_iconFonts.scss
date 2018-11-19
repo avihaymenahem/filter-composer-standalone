@@ -1,0 +1,990 @@
+@import "./colors";
+@import "./mixins";
+@import "./variables";
+
+.ct-btn {
+    @include user-select-none();
+    @mixin ct-btn-circle($circle-size: 55, $font-size: $circle-size/2, $base-color: $white, $hover-color: $bg-dirty, $disabled-color: $text-medium) {
+        $border-size: 2;
+        box-sizing: border-box;
+        width: #{$circle-size}px;
+        height: #{$circle-size}px;
+        line-height: normal;
+        font-size: #{$font-size * 1.5}px;
+        border: #{$border-size}px solid $base-color;
+        border-radius: 50%;
+        color: $base-color;
+        cursor: pointer;
+        background-color: transparent;
+        &.disabled {
+            color: $disabled-color;
+            border-color: $disabled-color;
+            cursor: default;
+            &:hover {
+                background: transparent;
+                color: $disabled-color;
+                border-color: $disabled-color;
+            }
+            &.icon-font {
+                font-size: #{$font-size}px;
+                color: $disabled-color;
+            }
+        }
+        &.icon-font {
+            font-size: #{$font-size}px;
+            color: $base-color;
+        }
+        &:hover {
+            background: $base-color;
+            color: $hover-color;
+        }
+    }
+    &.ct-btn-circle {
+        &.small {
+            @include ct-btn-circle(35, 15);
+        }
+        &.large {
+            @include ct-btn-circle();
+        }
+    }
+}
+
+.icon-font,
+.iconFont {
+    font-family: 'ctIcon';
+    cursor: pointer;
+    font-weight: normal;
+    &.icon-more-option-hollow {
+        color: inherit;
+        &:before {
+            content: "\3b";
+        }
+    }
+
+    &.disabled {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+    &.arrow-upico {
+        color: #66cc99;
+        font-size: 7px;
+        font-weight: normal;
+        &:after {
+            content: '!';
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #36226b;
+        }
+        &.sm {
+            font-size: 5px;
+            color: #403a74;
+        }
+        &.green {
+            color: $good-green;
+        }
+        &.red {
+            color: $bad-red;
+        }
+        &.gray {
+            color: $warm-gray;
+        }
+    }
+    &.settings {
+        font-size: 14px;
+        color: $c-2;
+        &::after {
+            content: '`';
+        }
+    }
+    &.arrow-downico {
+        color: $text-dark;
+        font-size: 5px;
+        font-weight: normal;
+        &:after {
+            content: '\0022';
+        }
+        &:hover {
+            color: $text-darkest;
+        }
+        &:active {
+            color: $brand-primary;
+        }
+        &.black {
+            color: #000000;
+        }
+        &.green {
+            color: $good-green;
+        }
+        &.red {
+            color: $bad-red;
+        }
+        &.gray {
+            color: $warm-gray;
+        }
+    }
+    &.down-arrow {
+        color: $text-dark;
+        font-size: 5px;
+        font-weight: normal;
+        &:after {
+            content: '`';
+        }
+        &:hover {
+            color: $text-darkest;
+        }
+        &:active {
+            color: $brand-primary;
+        }
+        &.black {
+            color: $black;
+        }
+        &.green {
+            color: $good-green;
+        }
+        &.red {
+            color: $bad-red;
+        }
+        &.gray {
+            color: $warm-gray;
+        }
+    }
+    &.multiply-devices,
+    &.all {
+        &:after {
+            content: '=';
+        }
+    }
+    &.desktop, &.personalcomputer {
+        &:after {
+            content: ',';
+        }
+    }
+    &.mobile, &.smartphone {
+        &:after {
+            content: ':';
+        }
+    }
+    &.tablet {
+        &:after {
+            content: 'j';
+        }
+    }
+    &.multiply-devices, &.all, &.desktop, &.personalcomputer, &.mobile, &.tablet, &.smartphone {
+        color: $text-medium;
+        font-size: 24px;
+
+        .selected &,
+        .selected &:hover {
+            color: $brand-primary;
+        }
+    }
+
+    &.multiply-devices, &.personalcomputer, &.tablet, &.smartphone {
+        &:hover {
+            color: $text-dark;
+        }
+    }
+    &.check {
+        font-size: 13px;
+        color: #000;
+        &:after {
+            content: 'S'
+        }
+        &:hover {
+            color: $tealish;
+        }
+    }
+    &.checkbox-off {
+        color: #999;
+        font-size: 13px;
+        &:after {
+            content: '*';
+            background-color: $white;
+        }
+        &.secondary {
+            font-size: 10px;
+        }
+    }
+    &.checkbox-on {
+        color: #8e73fb;
+        font-size: 13px;
+        &:after {
+            content: ')';
+            background-color: $white;
+        }
+        &.secondary {
+            color: $text-dark;
+            font-size: 10px;
+        }
+    }
+    &.search {
+        color: #999;
+        font-size: 13px;
+        &:after {
+            content: 'N';
+        }
+    }
+    &.undo {
+        font-size: 13px;
+        color: #000;
+        &:after {
+            content: 'u'
+        }
+        &:hover {
+            color: $c-2;
+        }
+    }
+    &.icon-trash {
+        font-size: 14px;
+        color: $text-light;
+        &:after {
+            content: 'R';
+            display: inline-block;
+            vertical-align: top;
+        }
+        &:hover {
+            color: $text-medium;
+        }
+    }
+    &.error {
+        font-size: 13px;
+        color: $system-success;
+        &:after {
+            content: '.'
+        }
+    }
+    &.big-info {
+        font-size: 13px;
+        color: $clickable;
+        &:after {
+            content: 'b'
+        }
+    }
+    &.exit {
+        font-size: 13px;
+        color: $text-dark;
+        &:after {
+            content:'/'
+        }
+    }
+    &.help-center {
+        font-size: 16px;
+        color: $text-dark;
+        &:after {
+            content:'}'
+        }
+    }
+    &.clicktale {
+        font-size: 16px;
+        color: $text-dark;
+        &:after {
+            content:'?'
+        }
+    }
+    &.radio-btn-on {
+        font-size: 13px;
+        color: $brand-purple;
+        &:after {
+            content: 'D'
+        }
+    }
+    &.radio-btn-off {
+        font-size: 13px;
+        color: $warm-gray;
+        &:after {
+            content: 'E'
+        }
+    }
+    &.plus-btn-hollow {
+        &:after {
+            content: 'A';
+        }
+    }
+    &.plus-btn {
+        font-size: 30px;
+        color: #fff;
+        &:after {
+            content: '@';
+        }
+        &:hover {
+            &:after {
+                content: 'A';
+            }
+        }
+    }
+    &.minus {
+        font-size: 30px;
+        color: #333;
+        text-transform: none;
+        &:after {
+            content: 'm';
+        }
+    }
+    &.pencil {
+        font-size: 14px;
+        color: $c-2;
+        &:after {
+            content: '-';
+        }
+    }
+
+    &.duplicate {
+        font-size: 14px;
+        color: $c-2;
+        &:after {
+            content: '>';
+        }
+    }
+
+    &.clone {
+        font-size: 14px;
+        color: $c-2;
+        &:after {
+            content: '+';
+        }
+    }
+
+    &.wrench {
+        font-size: 14px;
+
+        &:after {
+            content: 'z';
+        }
+    }
+
+    &.smallClose {
+        font-size: 8px;
+        color: $red;
+        &:hover {
+            color: $red-3;
+        }
+        &:active {
+            color: $red-4;
+        }
+        &:after {
+            content: 'U';
+        }
+    }
+    &.closeX {
+        font-size: $font-size-m;
+        color: $text-medium;
+        &:hover,
+        &:active {
+            color: $text-dark;
+        }
+        &:after {
+            content: 'U';
+        }
+        &.small {
+            font-size: $font-size-xp - 1px;
+        }
+        &.white {
+            color: $white;
+        }
+    }
+    &.plus {
+        font-size: 10px;
+        &:after {
+            content: 'p';
+        }
+    }
+    &.arrow-left {
+        font-size: 25px;
+        &:after {
+            content: '6';
+        }
+    }
+    &.arrow-right {
+        font-size: 25px;
+        &:after {
+            content: '\'';
+        }
+    }
+    &.logo-name {
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: normal;
+        &:after {
+            content: '6';
+        }
+    }
+    &.calendar {
+        color: #414042;
+        font-size: 19px;
+        font-weight: normal;
+        &:after {
+            content: '(';
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #54358d;
+        }
+    }
+    &.pathfinderico {
+        font-size: 18px;
+        color: $text-dark;
+        &:after {
+            content: '{';
+        }
+    }
+    &.heatmapico {
+        font-size: 16px;
+        color: $text-dark;
+        &:after {
+            content: 'h';
+        }
+        &:hover {
+            color: $text-darkest;
+        }
+        .behavioral-metric-icons-item & {
+            color: $text-medium;
+            &:hover {
+                color: $text-dark;
+            }
+        }
+        .dd-mobile-playback-influential-segments & {
+            font-size: 18px;
+        }
+    }
+    &.recording {
+        font-size: 16px;
+        color: $text-dark;
+        &:after {
+            content: "L"
+        }
+        &:hover {
+            color: $text-darkest;
+        }
+        .behavioral-metric-icons-item & {
+            color: $text-medium;
+            &:hover {
+                color: $text-dark;
+            }
+        }
+        .dd-mobile-playback-influential-segments & {
+            font-size: 18px;
+            margin-left: 10px;
+            &.active {
+                color: $brand-primary;
+            }
+        }
+        .have-looping-data & {
+            font-size: 18px;
+            color: $text-medium;
+            &:hover {
+                color: $text-dark;
+                padding-right: 15px;
+                cursor: pointer;
+            }
+        }
+        .apps-replays & {
+            color: $text-medium;
+            margin-right: 32px;
+            &:hover {
+                color: $text-dark;
+            }
+        }
+    }
+    &.small-filter {
+        font-size: 18px;
+        color: $text-dark;
+        &:after {
+            content: "t";
+        }
+        &:hover {
+            color: $text-darkest;
+        }
+        .filter-icon-space &,
+        .have-looping-data & {
+            color: $text-medium;
+            &:hover {
+                color: $text-dark;
+            }
+        }
+    }
+
+    &.filter {
+        color: #414042;
+        font-size: 18px;
+        font-weight: normal;
+        &:after {
+            content: '0';
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #54358d;
+        }
+    }
+    &.funnel {
+        color: $text-medium;
+        font-size: 24px;
+        font-weight: normal;
+        &:after {
+            content: '0';
+        }
+    }
+    &.funnel-purple {
+        color: #8e73fb;
+        font-size: 18px;
+        font-weight: normal;
+        &:after {
+            content: '0';
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #54358d;
+        }
+    }
+    &.arrow-hollow-right {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+        &:after {
+            content: "'";
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #36226b;
+        }
+        &.big {
+            font-size: 24px;
+        }
+    }
+    &.arrow-hollow-left {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+        &:after {
+            content: '&';
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #36226b;
+        }
+        &.big {
+            font-size: 24px;
+        }
+    }
+    &.arrow-hollow-up {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+        &:after {
+            content: "V";
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #36226b;
+        }
+        &.big {
+            font-size: 26px;
+        }
+    }
+    &.arrow-hollow-down {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+        &:after {
+            content: 'Z';
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #36226b;
+        }
+        &.big {
+            font-size: 26px;
+        }
+    }
+    &.arrow-left {
+        font-size: 12px;
+        font-weight: normal;
+        color: #333333;
+        &:after {
+            content: '&';
+        }
+        &:hover {
+            color: #8e73fb;
+        }
+        &:active {
+            color: #36226b;
+        }
+    }
+    &.heatmap-menu {
+        font-size: 17px;
+        font-weight: normal;
+        color: $text-dark;
+        &:after {
+            content: '1';
+        }
+        &:hover {
+            color: $text-darkest;
+        }
+    }
+    &.closeico {
+        font-size: 14px;
+        font-weight: normal;
+        color: $white;
+        opacity: 0.8;
+        &:after {
+            content: 'U';
+        }
+        &:hover {
+            opacity: 1;
+        }
+        &.smaller {
+            font-size: 13px;
+        }
+    }
+    &.regenerate {
+        font-size: 16px;
+        font-weight: normal;
+        color: #ffffff;
+        &:after {
+            content: 'M';
+        }
+    }
+    &.move-icon {
+        font-size: 11px;
+        font-style: normal;
+        color: $text-light;
+        margin-right: 5px;
+        cursor: move;
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+        cursor: grab;
+        opacity: 0.7;
+        &:after {
+            content: 'q';
+        }
+        .list-item:hover &,
+        .as-sortable-drag & {
+            color: inherit;
+            opacity: 1;
+        }
+        .list-item.active:hover & {
+            color: $text-dark;
+        }
+    }
+    &.more-options-hollow {
+        &:after {
+            content: ';'
+        }
+    }
+    &.more-options {
+        color: $warm-gray;
+        font-size: 17px;
+        &:hover {
+            color: $c-2;
+        }
+        &:active {
+            color: $c-2;
+        }
+        &:after {
+            content: '<'
+        }
+    }
+    &.mobile-playback-desktop-ico {
+        &:hover {
+            color: #ffffff;
+        }
+        &:active {
+            color: #ffffff;
+        }
+        &:after {
+            content: 'H'
+        }
+    }
+    &.mobile-playback-mobile-ico {
+        &:hover {
+            color: #ffffff;
+        }
+        &:active {
+            color: #ffffff;
+        }
+        &:after {
+            content: 'K'
+        }
+    }
+    &.arrow-visits-to-out {
+        &:after {
+            content: 'd'
+        }
+    }
+    &.arrow-visits-from-out {
+        &:after {
+            content: 'k'
+        }
+    }
+    &.arrow-visits-in {
+        &:after {
+            content: '^'
+        }
+    }
+    &.hm-bg-page {
+        color: #d3d2d2;
+        font-size: 35px;
+        &:after {
+            content: 'W'
+        }
+    }
+    &.hm-bg-apply-both-heatmap,
+    &.hm-bg-apply-left-heatmap,
+    &.hm-bg-apply-right-heatmap {
+        color: $text-light;
+        font-size: 11px;
+        .ct-btn-primary & {
+            color: $white;
+        }
+    }
+    &.hm-bg-apply-both-heatmap:after {
+        content: '|';
+    }
+    &.hm-bg-apply-left-heatmap:after {
+        content: '_';
+    }
+    &.hm-bg-apply-right-heatmap:after {
+        content: '8';
+    }
+    &.hm-bg-eye {
+        color: $text-light;
+        font-size: 16px;
+        &:after {
+            content: 'Y'
+        }
+    }
+    &.arrow-right-full {
+        font-size: 11px;
+        &:after {
+            content: "$"
+        }
+    }
+    &.arrow-left-full {
+        font-size: 11px;
+        &:after {
+            content: "#"
+        }
+    }
+    &.magnifying-glass {
+        font-size: 11px;
+        &:after {
+            content: "N";
+        }
+    }
+    &.arrow-right-big {
+        font-size: 11px;
+        &:after {
+            content: "%"
+        }
+    }
+    &.change-bg {
+        font-size: 11px;
+        &:after {
+            content: "~"
+        }
+    }
+    &.bug {
+        font-size: 16px;
+        color: $text-medium;
+        cursor: default;
+        &:after {
+            content: "c"
+        }
+    }
+    &.android-icon {
+        font-size: 12px;
+        color: $android;
+        cursor: default;
+        &:after {
+            content: "]";
+        }
+    }
+    &.apple-icon {
+        font-size: 12px;
+        cursor: default;
+        &:after {
+            content: "[";
+        }
+    }
+    &.sharing-link {
+        font-size: 17px;
+        &:after {
+            content: "O";
+        }
+    }
+    &.info {
+        font-size: 11px;
+        &:after {
+            content: "3"
+        }
+    }
+    &.info-hollow {
+        font-size: 11px;
+        &:after {
+            content: "2"
+        }
+    }
+    &.kpi{
+        &:after {
+            content: "4"
+        }
+    }
+    &.visit-level{
+        &:after {
+            content: "\\"
+        }
+    }
+    &.pnq {
+        &:after {
+            content: "X"
+        }
+    }
+    &.apply-segment-loop {
+        color: $c-2;
+        width: 21px;
+        height: 15px;
+
+        &:after {
+            content: "§"
+        }
+    }
+    &.refresh {
+        font-size: 16px;
+        color: $text-medium;
+        &:after {
+            content: "r"
+        }
+    }
+    &.loop {
+        font-size: 16px;
+        color: $text-medium;
+        &:after {
+            content: "l"
+        }
+    }
+
+    &.question {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        font-size: 11px;
+        line-height: 1;
+        font-weight: normal;
+        color: $text-light;
+        cursor: default;
+        
+        &:after {
+            content: 'C';
+        }
+
+        &:hover {
+            color: $text-medium;
+        }
+    }
+}
+
+.iconPlus {
+    font-family: 'ctIconPlus';
+    cursor: pointer;
+    font-weight: normal;
+
+    &.reload {
+        &::before {
+            content: "\52";
+        }
+    }
+    &.disabled {
+        cursor: default;
+        color: rgba(64, 58, 116, 0.15) !important;
+    }
+
+    &.add-mini {
+        color: inherit;
+        font-size: 15px;
+        font-weight: normal;
+        &:after {
+            content: 'a';
+        }
+    }
+
+    &.download {
+        color: inherit;
+        font-size: 16px;
+        font-weight: normal;
+        padding: 5px 0 0;
+        &:after {
+          content: 'D';
+        }
+    }
+
+    &.mobile-playback-desktop,
+    &.mobile-playback-mobile {
+        color: inherit;
+        text-align: center;
+        font-size: $font-size-l;
+        font-weight: normal;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        &:not(:first-child) {
+            margin-left: 2px;
+        }
+    }
+    &.mobile-playback-desktop:after {
+        content: 'c';
+    }
+    &.mobile-playback-mobile:after {
+        content: 'f';
+    }
+
+    &.zoom-in,
+    &.zoom-out {
+        font-size: $font-size-sm;
+        color: $text-medium;
+        .editMode & {
+            cursor: default;
+            color: rgba(64, 58, 116, 0.15) !important;
+        }
+    }
+    &.zoom-in:after {
+        content: 'q';
+    }
+    &.zoom-out:after {
+        content: 'w';
+    }
+
+    &.puzzle {
+        font-size: $font-size-m;
+        padding-right: 4px;
+        &:after {
+            content: 'E';
+        }
+    }
+
+    &.shared-with {
+        color: $no-edit-permissions-tooltip-text;
+        font-size: $font-size-m;
+
+        &:after {
+            content: 'S';
+        }
+    }
+}

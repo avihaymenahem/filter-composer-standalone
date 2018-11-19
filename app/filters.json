@@ -1,0 +1,637 @@
+[
+    {
+        "id": "pageAttribute",
+        "field": "pageAttribute",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "pageAttribute"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Page Attribute",
+        "dataType": "pageAttribute",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "action",
+            "population",
+            "customSegment",
+            "step"
+        ]
+    },
+    {
+        "id": "visitPageAttribute",
+        "field": "visitPageAttribute",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "visitPageAttribute"
+        },
+        "aggregation": {
+            "level": "visit"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Visit Page Attribute",
+        "dataType": "pageAttribute",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "action",
+            "population",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "dynamicAction",
+        "field": "dynamicAction",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "dynamicAction"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Page Action",
+        "dataType": "dynamicAction",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "action",
+            "population",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "visitDynamicAction",
+        "field": "visitDynamicAction",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "visitDynamicAction"
+        },
+        "aggregation": {
+            "level": "visit"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Visit Action",
+        "dataType": "dynamicAction",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "action",
+            "population",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "avg_engagementTime",
+        "field": "engagementTime",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "avgEngagementTime"
+        },
+        "aggregation": {
+            "level": "stepVisit",
+            "type": "avg"
+        },
+        "logicalOperators": [],
+        "displayName": "Avg. engagement time",
+        "dataType": "time",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "population",
+            "action",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "sum_engagementTime",
+        "field": "engagementTime",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "sumEngagementTime"
+        },
+        "aggregation": {
+            "level": "stepVisit",
+            "type": "sum"
+        },
+        "logicalOperators": [],
+        "displayName": "Total engagement time",
+        "dataType": "time",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "population",
+            "action",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "max_scrollReach",
+        "field": "scrollReach",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "maxScrollReach"
+        },
+        "aggregation": {
+            "level": "stepVisit",
+            "type": "max"
+        },
+        "logicalOperators": [],
+        "displayName": "Scroll reach",
+        "dataType": "percentage",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "action",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "clicksOnPage",
+        "field": "clicksOnPage",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "clicksOnPage"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [],
+        "displayName": "Page Mouse Clicks",
+        "dataType": "integer",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "ViewportHeight",
+        "field": "ViewportHeight",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "viewPortHeight"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [],
+        "displayName": "View Port Height",
+        "dataType": "integer",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "max_jsErrorCount",
+        "field": "jsErrorCount",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "jsErrorCount"
+        },
+        "aggregation": {
+            "level": "pageView",
+            "type": "max"
+        },
+        "logicalOperators": [],
+        "displayName": "JS Error count",
+        "dataType": "integer",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "country",
+        "field": "country",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "country"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Country",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "region",
+        "field": "region",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "region"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Region",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "browser",
+        "field": "browser",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "browser"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Browser",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "operatingSystem",
+        "field": "operatingSystem",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "operatingSystem"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Operating System",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "deviceType",
+        "field": "deviceType",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "deviceType"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Device Type",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "deviceVendor",
+        "field": "deviceVendor",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "deviceVendor"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Device Vendor",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "deviceModel",
+        "field": "deviceModel",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "deviceModel"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Device Model",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "referrer",
+        "field": "referrer",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "referrer"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Page Referrer",
+        "dataType": "location",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "trafficSource",
+        "field": "trafficSource",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "trafficSource"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Traffic Source",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "campaign",
+        "field": "campaign",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "campaign"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Campaign Name",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "campaignContent",
+        "field": "content",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "campaignContent"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Campaign Content",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "location",
+        "field": "location",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "location"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "Page URL",
+        "dataType": "location",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "step",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "isNewVisitor",
+        "field": "isNewVisitor",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "isNewVisitor"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [],
+        "displayName": "New Visitors",
+        "dataType": "positiveBoolean",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "isReturningVisitor",
+        "field": "isNewVisitor",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "isReturningVisitor"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [],
+        "displayName": "Returning Visitors",
+        "dataType": "negativeBoolean",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment",
+            "population"
+        ]
+    },
+    {
+        "id": "isLastPage",
+        "field": "isLastPage",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "isLastPage"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [],
+        "displayName": "Is Last Page",
+        "dataType": "positiveBoolean",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "isFirstPage",
+        "field": "isFirstPage",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "isFirstPage"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [],
+        "displayName": "Is First Page",
+        "dataType": "positiveBoolean",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "lackOfInterest",
+        "field": "lackOfInterest",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "lackOfInterest"
+        },
+        "aggregation": {
+            "level": "pageView"
+        },
+        "logicalOperators": [],
+        "displayName": "Disengaged",
+        "dataType": "positiveBoolean",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "customSegment"
+        ]
+    },
+    {
+        "id": "abTestExperience",
+        "field": "abTestExperience",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "abTestExperience"
+        },
+        "aggregation": {
+            "level": "visit"
+        },
+        "logicalOperators": [
+            "AND",
+            "OR"
+        ],
+        "displayName": "A/B Test",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "population",
+            "step"
+        ]
+    },
+    {
+        "id": "visitorID",
+        "field": "visitorID",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "visitorId"
+        },
+        "aggregation": {
+            "level": "pageView",
+            "type": "count"
+        },
+        "patternType": "equals",
+        "logicalOperators": [
+            "OR"
+        ],
+        "displayName": "Visitor Id",
+        "dataType": "listCsv",
+        "metricType": "web",
+        "availability": [
+            "segment",
+            "population"
+        ]
+    }
+]

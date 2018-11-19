@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 30 20" style="enable-background:new 0 0 30 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{opacity:0.3;enable-background:new    ;}
+</style>
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M394-388h-14c-0.3,0-0.5-0.2-0.5-0.5v-12c0-0.3,0.2-0.5,0.5-0.5h14c0.3,0,0.5,0.2,0.5,0.5v12
+				C394.5-388.2,394.3-388,394-388z M380.5-389h13v-11h-13V-389z"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
+</g>
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_3_" d="M390.5-384.4h-14c-0.3,0-0.5-0.2-0.5-0.5v-13c0-0.3,0.2-0.5,0.5-0.5h2.2c0.3,0,0.5,0.2,0.5,0.5
+				s-0.2,0.5-0.5,0.5H377v12h13v-1.6c0-0.3,0.2-0.5,0.5-0.5s0.5,0.2,0.5,0.5v2.1C391-384.6,390.8-384.4,390.5-384.4"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
+</g>
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_5_" d="M-641,459.1c0,1.1,0.8,1.5,1.7,1l19.8-11.7c1-0.6,1-1.5,0-2.1l-19.8-12.2c-0.9-0.6-1.7-0.2-1.7,0.9V459.1z
+				"/>
+		</defs>
+		<clipPath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
+</g>
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_7_" d="M-650,456.1c0,1.1,0.8,1.5,1.7,1l19.8-11.7c1-0.6,1-1.5,0-2.1l-19.8-12.2c-0.9-0.6-1.7-0.2-1.7,0.9V456.1z
+				"/>
+		</defs>
+		<clipPath id="SVGID_8_">
+			<use xlink:href="#SVGID_7_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
+</g>
+<g>
+	<rect x="-1086.8" y="-351.4" class="st0" width="1280" height="1110"/>
+	<rect x="-1086.8" y="-351.4" class="st0" width="1280" height="1110"/>
+</g>
+<g>
+	<path class="st1" d="M30,14.1l-8.4-4.9v3.5h-6C9.8,12.6,5,7.9,5,2.1l-2.9,0c0,7.4,6,13.4,13.5,13.5h6V19L30,14.1z"/>
+	<path class="st1" d="M21.6,9.2v3.5H0v2.9h21.6V19l8.4-4.9L21.6,9.2z"/>
+</g>
+</svg>

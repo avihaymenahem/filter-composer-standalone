@@ -1,0 +1,70 @@
+<div class="ct-filter-composer">
+    <input type="hidden"
+           ng-if="!(includedFilters.length || excludedFilters.length)"
+           required
+           ng-required="true"
+           ng-model="dummyValue">
+    <div class="filters-container">
+        <ct-loader loader-container-class="filters-loader" loading="loadingFilters"></ct-loader>
+        <div class="included-filters" ng-if="includedFilters.length > 0">
+            <div class="ct-filter-section-title">Include</div>
+            <ul class="ct-filters-list">
+                <li class="ct-filter" ng-repeat="filter in includedFilters track by $id(filter)">
+                    <span class="ct-filter-prefix" ng-if="!$first" >and</span>
+                    <!-- <basic-filter filter-model="filter" class="ct-filter-item"
+                                  ng-class='{ml3:$first && includedFilters.length>1 }'
+                                  filters-list="filtersList" config="includedConfiguration">
+                    </basic-filter> -->
+                    <div>BASIC-FILTER</div>
+                    <span class="icon-font icon-trash"
+                          ng-if="!isLocationFilter(filter)"
+                          ng-click="onRemoveIncluded($index)">
+                    </span>
+                    <span class="icon-font icon-trash"
+                          ng-if="isLocationFilter(filter) && isSegments() && !isPluralURLs($index, 'included')"
+                          ng-click="onRemoveIncluded($index)"
+                          ng-style="locationStyleObj">
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="excluded-filters" ng-if="excludedFilters.length > 0">
+            <div class="ct-filter-section-title">Exclude</div>
+            <ul class="ct-filters-list">
+                <li class="ct-filter" ng-repeat="filter in excludedFilters track by  $id(filter)">
+                    <span class="ct-filter-prefix" ng-if="!$first">and</span>
+                    <!-- <basic-filter filter-model="filter"
+                                  class="ct-filter-item"
+                                  ng-class='{ml3:$first && excludedFilters.length>1}'
+                                  filters-list="filtersList"
+                                  config="excludedConfiguration">
+                    </basic-filter> -->
+                    <div>BASIC-FILTER</div>
+                    <span class="icon-font icon-trash"
+                          ng-if="!isLocationFilter(filter)"
+                          ng-click="onRemoveExcluded($index)">
+                    </span>
+                    <span class="icon-font icon-trash"
+                          ng-if="isLocationFilter(filter) && isSegments() && !isPluralURLs($index, 'excluded')"
+                          ng-click="onRemoveExcluded($index)">
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="ct-filter-comp-footer"
+             ng-hide="(excludedFilters.length>=1 && includedFilters.length>=1 && configuration.isSingleDimension)">
+            <a class="ct-filter-add"
+               ng-hide="includedFilters.length>=1 && configuration.isSingleDimension"
+               ng-click="onAddIncludeFilter()" data-fbt="{{::labels.add}}">
+                <div class="plus-circle iconFont plus"></div>
+                {{ ::labels.add }}
+            </a>
+            <a class="ct-filter-add"
+               ng-hide="excludedFilters.length>=1 && configuration.isSingleDimension"
+               ng-click="onAddExcludeFilter()" data-fbt="{{::labels.remove}}">
+                <div class="plus-circle iconFont plus"></div>
+                {{ ::labels.remove }}
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,240 @@
+$none : 0px;
+$m: 5px;
+$l: 10px;
+$xl : 20px;
+
+/**
+General boxing util
+format <type>-<side>-<size>
+
+@type - either 'm' for margin or 'p' for padding
+@side - optional. the box side, if not set will affect all sides
+@size - the size of added value to box. 'm' for medium (5px), 'l' for large (10px) ,'xl' for x-large (20px). values in px are set globally
+
+for example :
+ m-l-l = margin-left-large
+ p-r-m = padding-right-medium
+ p-m = padding-medium
+**/
+
+
+/// Margin
+
+@mixin m-l($size) {
+  margin-left: $size;
+}
+
+@mixin m-r($size) {
+  margin-right: $size;
+}
+
+@mixin m-t($size) {
+  margin-top: $size;
+}
+
+@mixin m-b($size) {
+  margin-bottom: $size;
+}
+
+.m-l-none {
+  @include m-l($none)
+}
+
+.m-r-none {
+  @include m-r($none)
+}
+
+.m-t-none {
+  @include m-t($none)
+}
+
+.m-b-none {
+  @include m-b($none)
+}
+
+.m-none {
+  @extend .m-t-none;
+  @extend .m-l-none;
+  @extend .m-b-none;
+  @extend .m-r-none;
+}
+
+.m-l-m {
+  @include m-l($m)
+}
+
+.m-r-m {
+  @include m-r($m)
+}
+
+.m-t-m {
+  @include m-t($m)
+}
+
+.m-b-m {
+  @include m-b($m)
+}
+
+.m-m {
+  @extend .m-t-m;
+  @extend .m-l-m;
+  @extend .m-b-m;
+  @extend .m-r-m;
+}
+
+.m-l-l {
+  @include m-l($l)
+}
+
+.m-r-l {
+  @include m-r($l)
+}
+
+.m-t-l {
+  @include m-t($l)
+}
+
+.m-b-l {
+  @include m-b($l)
+}
+
+.m-l {
+  @extend .m-t-l;
+  @extend .m-l-l;
+  @extend .m-b-l;
+  @extend .m-r-l;
+}
+
+
+.m-l-xl {
+  @include m-l($xl)
+}
+
+.m-r-xl {
+  @include m-r($xl)
+}
+
+.m-t-xl {
+  @include m-t($xl)
+}
+
+.m-b-xl {
+  @include m-b($xl)
+}
+
+.m-xl {
+  @extend .m-t-xl;
+  @extend .m-l-xl;
+  @extend .m-b-xl;
+  @extend .m-r-xl;
+}
+
+/// Padding
+
+@mixin p-l($size) {
+  padding-left: $size;
+}
+
+@mixin p-r($size) {
+  padding-right: $size;
+}
+
+@mixin p-t($size) {
+  padding-top: $size;
+}
+
+@mixin p-b($size) {
+  padding-bottom: $size;
+}
+
+.p-l-none {
+  @include p-l($none)
+}
+
+.p-r-none {
+  @include p-r($none)
+}
+
+.p-t-none {
+  @include p-t($none)
+}
+
+.p-b-none {
+  @include p-b($none)
+}
+
+.p-none {
+  @extend .p-t-none;
+  @extend .p-l-none;
+  @extend .p-b-none;
+  @extend .p-r-none;
+}
+
+.p-l-m {
+  @include p-l($m)
+}
+
+.p-r-m {
+  @include p-r($m)
+}
+
+.p-t-m {
+  @include p-t($m)
+}
+
+.p-b-m {
+  @include p-b($m)
+}
+
+.p-m {
+  @extend .p-t-m;
+  @extend .p-l-m;
+  @extend .p-b-m;
+  @extend .p-r-m;
+}
+
+.p-l-l {
+  @include p-l($l)
+}
+
+.p-r-l {
+  @include p-r($l)
+}
+
+.p-t-l {
+  @include p-t($l)
+}
+
+.p-b-l {
+  @include p-b($l)
+}
+
+.p-l {
+  @extend .p-t-l;
+  @extend .p-l-l;
+  @extend .p-b-l;
+  @extend .p-r-l;
+}
+
+.p-l-xl {
+  @include p-l($xl)
+}
+
+.p-r-xl {
+  @include p-r($xl)
+}
+
+.p-t-xl {
+  @include p-t($xl)
+}
+
+.p-b-xl {
+  @include p-b($xl)
+}
+
+.p-xl {
+  @extend .p-t-xl;
+  @extend .p-l-xl;
+  @extend .p-b-xl;
+  @extend .p-r-xl;
+}

@@ -1,0 +1,57 @@
+$main-font        : "Objektiv", Arial;
+$main-arial       : Arial;
+$font-family      : "Open Sans", sans-serif;
+
+//font sizes
+$font-size-xp	  : 9px;
+$font-size-p      : 10px;
+$font-size-xxs    : 11px;
+$font-size-xs     : 12px;
+$font-size-ss     : 13px;
+$font-size-s      : 14px;
+$font-size-sm 	  : 15px;
+$font-size-m      : 16px;
+$font-size-l      : 18px;
+$font-size-xl     : 20px;
+$font-size-xll    : 22px;
+$font-size-xxl    : 26px;
+
+//z-index
+$edit-mode-z-index      : 99999;
+$edit-mode-tags-z-index : 999999;
+$max-z-index            : 9999999;
+$modal-backdrop-z-index : 999999910;
+$modal-dialog-z-index : 999999920;
+$popover-z-index : $modal-dialog-z-index + 1;
+$ct-modal-z-index: $modal-dialog-z-index - 2;
+$ct-confirmation-modal-z-index: 999999930;
+
+//shadows
+$box-shadow : 0 2px 6px 0 rgba(0, 0, 0, 0.16);
+$shadow-modal: 0 1px 9px 0 rgba(0, 0, 0, 0.38);
+$shadow-pageset-box: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+$shadow-button:  0 3px 4px 0 rgba(116, 87, 224, 0.51);
+$shadow-to-right: 0 1px 2px 0 #999999;
+$shadow-filter-list: inset 3px 0 0 0 #7E8696;
+$shadow-textbox: 1px 0 2px 0 #e4e5e8;
+$shadow-entity: -1px 1px 24px -7px rgba(0,0,0,0.55);
+$shadow-hm-settings: 0 1px 0 0 rgba(0, 0, 0, 0.21);
+$header-shadow:  0 1px 0 0 rgba(0, 0, 0, 0.21);
+$shadow-modal-footer: 0 -1px 3px 0 rgba(0, 0, 0, 0.21);
+$vs-box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.32);
+$shadow-apply-segments-bar: 0 2px 7px 0 rgba(0, 0, 0, 0.09);
+
+//border-radius
+$input-border-radius: 4px;
+$dd-border-radius: 2px;
+$button-border-radius: 3px;
+
+//gradients
+$dd-button-gradient: linear-gradient(to top, #f2f4f7, #ffffff);
+$nurit-background: linear-gradient(147deg, #fffc7e, #fff606);
+
+//height of fixed elements
+$height-header: 40px;
+$height-subheader: 50px;
+$height-apply-segment: 34px;
+$height-heatmap-subheader: 40px;

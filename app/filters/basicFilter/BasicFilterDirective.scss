@@ -1,0 +1,103 @@
+@import "../../../../assets/css/colors";
+@import "../../../../assets/css/variables";
+@import "../../../../assets/css/mixins";
+@import "../../../../assets/css/reset";
+.ct-basic-filter{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .ct-basic-filter-element:not(:first-child) {
+    margin-left: 10px;
+  }
+
+  .ct-basic-filter-element.ng-hide:not(.ng-hide-animate) + .ct-basic-filter-element {
+    margin-left: 0;
+    color: red !important;
+  }
+
+  .ct-dropdown-btn {
+    @include input;
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ct-dropdown-btn-label {
+      flex-grow: 1;
+    }
+
+    .down-arrow {
+      font-size: 17px;
+      text-align: center;
+      color: $text-medium;
+      width: 31px;
+      height: 100%;
+      background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+      border-left: 1px solid $border-color;
+    }
+
+    &.dropdown-toggle {
+      min-width: 105px;
+    }
+  }
+  //update pageset -> include -> first element
+  .ct-basic-filter-pageUrl {
+    color: $text-medium;
+  }
+
+  //is
+  .helper-span {
+    @include input;
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+     .down-arrow {
+      font-size: 17px;
+      text-align: center;
+      color: #959FB2;
+      width: 31px;
+      height: 100%;
+      background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+      border-left: 1px solid #D7DbE5;
+       opacity: 0.5;
+    }
+  }
+
+  .is-container {
+    display: flex;
+    width: 105px;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+
+  .specific-filter-container {
+    //flex: 0 1 auto;
+    flex-grow: 1;
+    min-width: 0; /* For handling white-space: nowrap */
+
+    &.full-width {
+      flex: 1;
+    }
+
+    select,
+    input[type=number],
+    input[type=text]{
+      @include input;
+    }
+  }
+
+}
+
+.ct-form-has-error {
+  .ct-basic-filter{
+    select.ng-invalid,
+    input.ng-invalid {
+      border-color: $system-alert;
+    }
+  }
+}

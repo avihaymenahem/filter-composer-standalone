@@ -1,0 +1,395 @@
+.icon {
+    background: url("../img/Icons_02.png");
+    width: 24px;
+    height: 24px;
+    display: block;
+    &.circles {
+        background-position: -5px -28px;
+        width: 24px;
+        height: 27px;
+    }
+    &.maginfy-glass-grey {
+    background: url("../img/Icons_02_apply_segments.png");
+    width: 16px; height: 16px;   
+    background-position: -1270px -860px; 
+    }
+    &.date-picker {
+        background-position: -1px -188px;
+        width: 17px;
+        height: 17px;
+    }
+    &.magnify-glass {
+        background-position: -1px -59px;
+        width: 16px;
+        height: 16px;
+    }
+    &.pencil {
+        background-position: -2px -82px;
+        width: 17px;
+        height: 18px;
+    }
+    &.share {
+        background-position: -2px -103px;
+        width: 15px;
+        height: 17px;
+    }
+    &.bell {
+        background-position: -2px -126px;
+        width: 16px;
+        height: 19px;
+    }
+    &.platform-picker {
+        background-position: 0 -207px;
+        width: 30px;
+        height: 21px;
+    }
+    &.purple-arrow {
+        background-position: -124px -215px;
+        width: 8px;
+        height: 6px;
+    }
+    &.white-arrow {
+        background-position: -1px -320px;
+        width: 8px;
+        height: 6px;
+    }
+    &.green-arrow,
+    &.green-arrow-down {
+        background-position: -83px -302px;
+        width: 11px;
+        height: 9px;
+    }
+    &.green-arrow-down {
+        transform: rotate(180deg);
+        vertical-align: top;
+        margin-top: 6px;
+    }
+    &.red-arrow,
+    &.red-arrow-up {
+        background-position: -94px -304px;
+        width: 19px;
+        height: 9px;
+    }
+    &.sm-close-x { background-position: -613px -831px; width: 14px; height: 13px;}
+  &.sm-close-x:hover { background-position: -629px -831px; width: 14px; height: 13px;}
+
+  &.settings-icon { background-position: -205px -794px; width: 20px; height: 17px;}
+  &.settings-icon:hover { background-position: -227px -794px; width: 20px; height: 17px;}
+
+  &.attention-icon { background-position: -265px -797px; width: 13px; height: 11px;}
+
+    &.red-arrow-up {
+        transform: rotate(180deg);
+        vertical-align: top;
+        margin-top: 8px;
+    }
+    &.equal-sign {
+        background-position: -116px -316px;
+        width: 8px;
+        height: 7px;
+        margin-bottom: 15px;
+    }
+    &.direct-arrow {
+        background-position: -271px -261px;
+        width: 42px;
+        height: 24px;
+    }
+    
+  &.scroll-arrow { background-position: -64px -464px; width: 14px; height: 22px; }
+  &.scroll-arrow.right { background-position: 0 -464px; }
+  &.funnel { 
+    background: url("../img/Icons_02_apply_segments.png");
+    background-position: -2px -403px;
+  
+    width: 16px;
+    height: 18px; }
+  &.funnel-purple {
+    background: url("../img/Icons_02_apply_segments.png");
+    background-position: -42px -403px;
+    width: 16px;
+    height: 18px;
+  }
+  &.check-grey {
+    background-position: -457px -891px;
+    width: 20px;
+    height: 18px;
+  }
+    &.direct-arrow.purple {
+        background-position: -271px -300px;
+    }
+    &.direct-arrow.yellow {
+        background-position: -271px -339px;
+    }
+    &.direct-arrow-long {
+        background-position: -225px -258px;
+        width: 42px;
+        height: 27px;
+    }
+    &.direct-arrow-long.purple {
+        background-position: -225px -297px;
+    }
+    &.direct-arrow-long.yellow {
+        background-position: -225px -336px;
+    }
+    &.kpi {
+        background-position: -109px -272px;
+        height: 22px;
+        width: 20px;
+    }
+    &.warning-sign {
+        background-position: 134px -272px;
+        height: 22px;
+        width: 25px;
+    }
+    &.delete-icon {
+        background-position: 0 -495px;
+        width: 22px;
+        height: 21px;
+    }
+    &.clicktale-icon {
+        background-position: -1px -705px;
+        width: 20px;
+        height: 20px;
+    }
+    &.playback-desktop {
+        background-position: -2px -550px;
+        width: 21px;
+        height: 17px;
+    }
+    &.playback-desktop:hover {
+        background-position: -29px -546px;
+        width: 35px;
+        height: 26px;
+    }
+    &.playback-desktop.pink {
+        background-position: -2px -578px;
+        width: 21px;
+        height: 17px;
+    }
+    &.playback-desktop.pink:hover {
+        background-position: -29px -574px;
+        width: 35px;
+        height: 26px;
+    }
+    &.playback-desktop.purple {
+        background-position: -265px -577px;
+        width: 27px;
+        height: 20px;
+    }
+    &.playback-desktop.purple:hover {
+        background-position: -296px -574px;
+        width: 35px;
+        height: 26px;
+    }
+    &.playback-desktop.yellow {
+        background-position: -264px -549px;
+        width: 27px;
+        width: 27px;
+        height: 20px;
+    }
+    &.playback-desktop.yellow:hover {
+        background-position: -297px -546px;
+        width: 35px;
+        height: 26px;
+    }
+    &.playback-desktop-small {
+        background-position: -428px -548px;
+        width: 22px;
+        height: 15px;
+    }
+    &.playback-desktop-small:hover {
+        background-position: -453px -547px;
+        width: 25px;
+        height: 18px;
+    }
+    &.playback-desktop-small.pink {
+        background-position: -428px -571px;
+        width: 21px;
+        height: 17px;
+    }
+    &.playback-desktop-small.pink:hover {
+        background-position: -478px -569px;
+        width: 27px;
+        height: 20px;
+    }
+    &.playback-desktop-small.purple {
+        background-position: -150px -545px;
+        width: 21px;
+        height: 17px;
+    }
+    &.playback-desktop-small.purple:hover {
+        background-position: -175px -545px;
+        width: 27px;
+        height: 20px;
+    }
+    &.playback-desktop-small.yellow {
+        background-position: -150px -569px;
+        width: 21px;
+        height: 17px;
+    }
+    &.playback-desktop-small.yellow:hover {
+        background-position: -175px -567px;
+        width: 27px;
+        height: 20px;
+    }
+    &.pencil-button-circle {
+        background: url("../img/Icons_02_apply_segments.png");
+        cursor: pointer;
+        width: 34px;
+        height: 34px;
+        background-position: -139px -883px;
+            font-size: 20px;
+        &:hover {
+            background-position: -175px -883px;
+        }
+        &:active {
+            background-position: -210px -883px;
+        }
+        &.disabled {
+            background-position: -247px -883px;
+        }
+    }
+    &.plus-button-circle {
+        background: url("../img/Icons_02_apply_segments.png");
+        cursor: pointer;
+        width: 34px;
+        height: 34px;
+        background-position: -139px -848px;
+        &:hover {
+            background-position: -175px -848px;
+        }
+        &:active {
+            background-position: -210px -848px;
+        }
+        &.disabled {
+            background-position: -247px -848px;
+        }
+    }
+    &.scroll-arrow-left {
+        background: url("../img/Icons_02_apply_segments.png");
+        width: 14px;
+        height: 25px;
+        background-position: -310px -464px;
+    }
+    &.scroll-arrow-right {
+        background: url("../img/Icons_02_apply_segments.png");
+        width: 14px;
+        height: 25px;
+        background-position: -248px -464px;
+    }
+    &.scroll-arrow-right-white {
+        background: url("../img/Icons_02_apply_segments.png");
+        width: 14px;
+        height: 25px;
+        background-position: -278px -464px;
+    }
+    &.scroll-arrow-left-white {
+        background: url("../img/Icons_02_apply_segments.png");
+        width: 14px;
+        height: 25px;
+        background-position: -297px -464px;
+    }
+    &.back-arrow {
+        background-position: -1px -325px;
+        width: 11px;
+        height: 20px;
+    }
+    &.back-arrow-white {
+        background: url("../img/Icons_02_apply_segments.png");
+        background-position: -64px -325px;
+        width: 11px;
+        height: 20px;
+    }
+    &.question-mark {
+        background-position: -2px -350px;
+        width: 12px;
+        height: 13px;
+        
+        &:hover {
+            background-position: -16px -350px;
+        }
+    }
+    &.radio-empty {
+        width: 16px;
+        height: 16px;
+        background-position: -21px -946px;
+    }
+    &.radio-checked {
+        width: 16px;
+        height: 16px;
+        background-position: -6px -946px;
+    }
+    &.checkbox-empty {
+        width: 16px;
+        height: 16px;
+        background-position: -22px -971px;
+    }
+    &.checkbox-checked {
+        width: 15px;
+        height: 15px;
+        background-position: -7px -971px;
+    }
+    &.trash {
+        width: 18px;
+        height: 20px;
+        background-position: -4px -915px;
+    }
+    &.trash-white {
+        width: 18px;
+        height: 20px;
+        background-position: -22px -915px;
+    }
+    &.etc {
+        width: 17px;
+        height: 9px;
+        background-position: -8px -856px;
+    }
+    &.plus {
+        width: 11px;
+        height: 9px;
+        background-position: -8px -903px;
+    }
+    &.red-close {
+        width: 33px;
+        height: 33px;
+        background-position: -2px -787px;
+  }
+
+  &.green-close {
+        width: 14px;
+    height: 14px;
+    background-position: -495px -894px;
+  }
+
+  &.black-big-close {
+        width: 17px;
+    height: 14px;
+    background-position: -146px -830px;
+  }
+
+  &.black-small-close {
+    background: url("../img/Icons_02_apply_segments.png");
+          width: 9px;
+    height: 10px;
+    background-position: -497px -917px;
+    &:hover {
+      background-position: -510px -917px;
+    }
+
+    &:active {
+          background-position: -522px -917px;
+    }
+  }
+
+  &.grey-close {
+    width: 17px;
+    height: 16px;
+    background-position: -508px -892px;
+  }
+
+  &.black-close {
+     width: 17px;
+    height: 16px;
+    background-position: -527px -892px;
+    }
+}

@@ -1,0 +1,293 @@
+/** General */
+html, body{
+  height: 100%;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $bg-body;
+  padding-top: 40px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body svg#accessibilityIcon {
+  position: fixed;
+}
+
+a:active,
+a:focus,
+a:hover {
+    outline: 0;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// chrome only at the moment, but useful
+.block-with-text {
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/** Collapse Window */
+body > ui-view {
+  display: block;
+  overflow: auto;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html.unpin-navbar {
+  overflow-y: auto;
+  height: calc(100% - 1px);
+
+  body {
+    overflow: visible;
+
+    > ui-view {
+        overflow: visible;
+    }
+  }
+}
+
+/** Navbar */
+.navbar {
+  background-color: $dark-purple;
+  background:  url('../img/brand_element.png') 0 0 no-repeat, linear-gradient(90deg, #403A74 2%, #403A74 57%, #8067D5 100%);
+  border-width: 0;
+  box-sizing: content-box;
+
+  .container-fluid {
+    padding: 0;
+
+    .navbar-brand {
+      font-size: inherit;
+      height: 40px;
+      line-height: 40px;
+      margin-left: 86px;
+      margin-right: 20px;
+      padding: 0;
+
+      &-secondary {
+        font-family: 'Open Sans';
+        font-size: 16px;
+        color: $white;
+        height: 40px;
+        line-height: 40px;
+        padding-top: 2px;
+      }
+
+      .logo {
+        display: block;
+        background: url("../img/logo.svg") center center no-repeat;
+        width: 93px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+/** Filters */
+.filters {
+  margin-bottom: 0;
+
+  li {
+    color: #54358d;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 49px;
+  }
+}
+
+.title-wrapper {
+  overflow: hidden;
+  clear: both;
+  display: block;
+
+  //.title,
+  .filter-cube {
+    float: left;
+    color: #532589;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 20px;
+  }
+
+  .cube {
+    width: 5px;
+    height: 5px;
+    display: block;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color: #532589;
+  }
+
+  .segment-container {
+    .filter-cube {
+      &:nth-child(even) {
+        color: #dbab1b;
+
+        .cube {
+          background-color: #dbab1b;
+        }
+      }
+    }
+  }
+}
+
+//scroll bar in webkit based browsers
+::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: $white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-workspace;
+  border-radius: 10px;
+  border: 2.5px solid $white;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: $text-medium;
+}
+
+.loader-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+  left: 0;
+  top: 0;
+  z-index: 200;
+}
+
+.loader,
+.step-loader,
+.step-loader-action {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.svg-loader{
+    height: 30px;
+    &.large {
+      height: 75px;
+    }
+    vertical-align: top;
+    .loader-path {
+        fill: $loader;
+    }
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+text.highcharts-title{
+  display:none;
+}
+.relative {
+    position: relative;
+}
+.inline-block {
+    display: inline-block;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.nopad {
+    padding: 0 !important;
+}
+.noshadow {
+    box-shadow: none;
+}
+.m-bottom-15 {
+    margin-bottom: 15px;
+}
+.m-bottom-10 {
+    margin-bottom: 10px;
+}
+.m-bottom-5 {
+    margin-bottom: 5px;
+}
+.highlighted {
+  background-color: $hightlighted;
+}
+
+// overrides for ui-toggle
+.ui-toggle {
+  &.toggle-xs {
+    height: 20px;
+    width: 40px;
+
+    > .ui-toggle__thumb {
+        width: 18px;
+    }
+
+    > input:checked ~ .ui-toggle__thumb {
+        transform: translateX( 18px );
+    }
+
+  }
+
+  input {
+    opacity: 0;
+    margin: 0;
+    &:checked + .ui-toggle__track {
+      .toggle-primary > & { background-color: $brand-primary }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

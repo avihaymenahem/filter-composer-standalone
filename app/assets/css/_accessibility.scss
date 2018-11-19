@@ -1,0 +1,87 @@
+body {
+
+  #INDWrap {
+    * {
+      font-family: 'Open Sans' !important;
+      font-weight: 600;
+    }
+
+    #INDmenu {
+      border: 0 !important;
+      box-shadow: 6px 0 32px 0 #000;
+
+      .INDmenuBody .INDmenuRow button {
+        height: 100px;
+
+        &:hover, &:visited, &:active, &:focus {
+          background: #f1f1f1 !important;
+        }
+
+        &[aria-pressed="true"] {
+          background: #fff;
+
+          span, svg * {
+            color: #7051dd !important;
+            fill: #7051dd !important;
+          }
+        }
+      }
+
+      .INDmenuFooter button svg circle {
+        fill: #5f6981 !important;
+      }
+
+      .INDmenuHeader {
+        background-color: #5f6981;
+      }
+
+      .INDmenuFooter > :last-child {
+        background-color: #5f6981;
+      }
+
+      .INDmenuHeader h2 {
+        font-size: 15px;
+        transform: none !important;
+      }
+    }
+  }
+
+  #INDmenu-btn {
+    right: -31px !important;
+    top: auto !important;
+    bottom: 6px;
+    margin: 0;
+
+    svg {
+      width: 90px;
+      height: 56px;
+
+      :first-child {
+        fill: url(#gradRadial);
+        stroke-width: 7;
+      }
+
+      :last-child {
+        transform: matrix(-1, 0, 0, 1, 453, 0);
+      }
+    }
+  }
+
+  :not(#INDdummy).INDtooltip {
+    opacity: 0.96;
+    height: 16px;
+    width: 112px;
+    font-family: 'Open Sans' !important;
+    border-radius: 3px;
+    font-size: 10px;
+    line-height: 17px;
+    margin-top: 10px;
+  }
+
+  :not(#INDdummy):not(INDdummy).INDtooltip {
+    background-color: #353c48 !important;
+    &:after {
+      border-left-color: #353c48 !important;
+    }
+  }
+}

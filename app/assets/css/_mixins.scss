@@ -1,0 +1,823 @@
+//forms & inputs
+@mixin form {
+  &-list {
+    max-width: 1000px;
+    min-width: 500px;
+    @include resetUl;
+
+    .icon-trash {
+      margin-left: 10px;
+      line-height: 31px;
+    }
+
+    .value-radio-container {
+      .form-subject,
+      .radio-button-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &-header {
+    @include resetH;
+    font-size: $font-size-xl;
+    color: $text-darkest;
+    font-weight: 600;
+    line-height: unset;
+    margin-bottom: 10px;
+  }
+
+  &-item {
+    display: flex;
+    flex-wrap: nowrap;
+    line-height: unset;
+    margin-bottom: 20px;
+  }
+
+  &-title {
+    display: inline-block;
+    color: $text-darkest;
+    font-weight: normal;
+    width: 20%;
+    min-width: 130px;
+    height: 31px;
+    line-height: 31px;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  &-required {
+    font-size: $font-size-xp;
+    color: $text-medium;
+    font-weight: 400;
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+  }
+
+  &-validation-failed {
+    font-size: $font-size-xp;
+    color: $system-alert;
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+  }
+
+  &-subject {
+    display: inline-block;
+    color: $text-dark;
+    max-width: 100%;
+    height: 31px;
+    line-height: 31px;
+    flex-grow: 1;
+
+    .value-radio {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+
+    .ct-form-control-radioButton {
+      font-size: $font-size-ss;
+      font-weight: normal;
+    }
+  }
+}
+
+@mixin searchBox {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0 5px;
+  background-color: $bg-light;
+  border: none;
+  box-shadow: $shadow-textbox;
+  position: relative;
+
+  .ct-textbox {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+  }
+  .magnifying-glass,
+  .closeX {
+      content: 'N';
+      display: inline-block;
+      font-family: 'ctIcon';
+      font-size: 15px;
+      font-weight: normal;
+      color: $text-light;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 10px;
+      top: 0;
+    }
+
+  .text-input {
+    @include input;
+    border-radius: 2px;
+    padding-right: 30px;
+    &:focus, &:active {
+      border: 1px solid $input-hover;
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin textBox {
+  display: block;
+  width: 100%;
+  height: 31px;
+  line-height: 31px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  .text-input {
+    @include input;
+  }
+}
+
+@mixin input($lineHeight: 31px, $font-size: $font-size-ss, $width: 100%, $height: $lineHeight) {
+    font-family: $font-family;
+    font-size: $font-size;
+    text-align: left;
+    color: $text-dark;
+    width: $width;
+    height: $height;
+    line-height: $lineHeight;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: $white;
+    border: 1px solid $border-color;
+    border-radius: $input-border-radius;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+    &:disabled {
+      color: $text-light;
+      border: 1px solid $input-disabled;
+    }
+    &:hover {
+      border: 1px solid $input-hover;
+    }
+    &:focus, &:active, &.active {
+      border: 1px solid $input-focus;
+      box-shadow: inset 0 0 0 3px rgba(136, 130, 216, 0.15);
+    }
+    &.ng-valid:not(.ng-pristine) {
+      // border: 1px solid $input-success;
+    }
+    &.ng-invalid.ng-touched {
+      border: 1px solid $input-error;
+      transition: none;
+    }
+    .ct-form-has-error &.ng-invalid {
+        border: 1px solid $input-error;
+        transition: none;
+      }
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      font-style: normal;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      font-style: normal;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      font-style: normal;
+    }
+    &::placeholder {
+      font-size: $font-size-ss;
+      font-style: normal;
+      color: $text-light;
+    }
+    &:focus {
+      outline: none;
+    }
+}
+
+@mixin dataList {
+  .data-list {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
+  .data-title,
+  .data-content {
+    display: inline-block;
+    line-height: unset;
+  }
+}
+
+//Used in subheader: workspace and apply segment dropdowns
+@mixin dd-primary($width: 280px, $lineHeight: 37px,
+                  $selectedContHeight: 50px, $fontSelected: $font-size-m) {
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+//in case there is footer and header (apply segment)
+  &.dropdown-container {
+    font-family: $font-family;
+    width: $width;
+    background-color: $white;
+    border-radius: $dd-border-radius;
+    box-shadow: $box-shadow;
+  }
+
+  .ct-dropdown-header, .ct-dropdown-footer, .dropdown-wrapper {
+    max-width: $width;
+  }
+
+//button to open dropdown with changing label (workspace dd)
+  .dropdown-selected-container {
+    display: flex;
+    max-width: $width;
+    height: $selectedContHeight;
+  }
+
+//header with search (apply segment)
+  .dropdown-header {
+    @include searchBox;
+  }
+  .ct-dropdown-list-container {
+    border-radius: $dd-border-radius;
+    box-shadow: $box-shadow;
+    position: absolute;
+    background-color: $white;
+    & > .search-container {
+      padding-top: 7px;
+      padding-bottom: 6px;
+      height: 44px;
+      background-color: $gray-smoke;
+      width: 280px;
+      .text-input {
+        border: solid 1px $light-blue-gray;
+      }
+      .magnifying-glass {
+        right: 6px;
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+  .options-list {
+    @include resetUl;
+    width: $width;
+    max-height: $lineHeight * 10 + $lineHeight/2 + 2px;
+    margin-top: 2px;
+    background-color: $white;
+    border-radius: $dd-border-radius;
+    box-shadow: $box-shadow;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    &.fixed-height {
+      height: $lineHeight * 10 + $lineHeight/2 + 2px;
+    }
+  }
+
+//in case there is footer and header (apply segment)
+  &.dropdown-container .options-list {
+    max-height: $lineHeight * 10 + $lineHeight/2;
+    box-shadow: none;
+    position: static;
+  }
+
+  .options-item {
+    font-size: $font-size-xs;
+    color: $text-dark;
+    height: $lineHeight;
+    line-height: $lineHeight;
+    padding-right: 15px;
+    padding-left: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+      background-color: $hover-bg;
+      cursor: pointer;
+    }
+
+    .options-item-link {
+      @include resetLink;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .icon-font {
+      margin-right: 5px;
+    }
+  }
+
+//footer with buttons (apply segment)
+  .dropdown-footer {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 3px;
+    box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.21);
+    justify-content: flex-end;
+    align-items: center;
+    .manage-segments-button {
+      color: $system-regular;
+      flex-grow: 1;
+      cursor: pointer;
+    }
+    .ct-btn-secondary-small,
+    .ct-btn-primary-small {
+      margin-left: 10px;
+    }
+  }
+
+  .selected {
+    font-size: $fontSelected;
+    color: $text-darkest;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .active {
+    font-weight: 600;
+    color: $text-darkest;
+    .icon-font {
+      color: $text-dark;
+    }
+  }
+
+  .applied {
+    color: $text-light;
+    &:hover {
+      background-color: $white;
+      cursor: default;
+    }
+  }
+
+  .arrow-downico {
+    margin-left: 5px;
+  }
+}
+
+//Used in multiselect component in configuration windows
+@mixin dd-simple-searchbar {
+  margin: 0;
+  padding: 0;
+
+  ul {
+    @include resetUl;
+    font-size: $font-size-xs;
+    color: $text-dark;
+    background-color: $white;
+  }
+
+  li {
+    height: 31px;
+    line-height: 31px;
+    padding-right: 10px;
+    padding-left: 10px;
+    &:hover {
+      background-color: $hover-bg;
+      cursor: pointer;
+    }
+
+    a {
+      @include resetLink;
+    }
+  }
+}
+
+@mixin dd-simple($max-width: 390px, $item-padding: 0 10px, 
+                $top: 21px, $left: -10px, $lineHeight: 26px, $minWidth: 125px) {
+  font-size: $font-size-xs;
+  color: $text-dark;
+  margin: 0;
+
+  .selected {
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  //ul
+  .options,
+  .options-list {
+    max-width: $max-width;
+    min-width: $minWidth;
+    max-height: $lineHeight * 10;
+    margin: 0;
+    padding: 0;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $dd-border-radius;
+    box-shadow: $box-shadow;
+    list-style: none;
+    position: absolute;
+    top: $top;
+    left: $left;
+    z-index: 999;
+    overflow-y: auto;
+    &:before {
+      content: none;
+    }
+  }
+
+  //li
+  .options-item {
+    display: flex;
+    text-align: left;
+    font-size: $font-size-xs;
+    height: $lineHeight;
+    line-height: $lineHeight !important;
+    padding: $item-padding;
+    border: none !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    .content {
+      flex-grow: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .left-item {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+
+    .icons-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-left: 10px;
+    }
+
+    &.active {
+      color: $text-darkest;
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: inherit !important;
+      background-color: $hover-bg !important;
+    }
+  }
+}
+
+//Used in Configuration windows
+@mixin dd-table {
+  padding: 0;
+  border: none;
+
+  @include dd-simple(unset, 0 10px, 2px, 0, 26px, 105px);
+
+  .options-item-link {
+    display: flex;
+    color: inherit;
+    width: 100%;
+    text-decoration: none;
+    justify-content: flex-start;
+  }
+}
+
+
+//Used in Action Configuration window - Choose currency dropdown
+@mixin ct-dropdown($width: 100%, $lineHeight: 31px, $fontSize: $font-size-ss, $arrowFont: 17px, $arrowWidth: 31px) {
+  @include dd-simple;
+  display: flex;
+  font-size: $fontSize;
+  color: $text-dark;
+  width: $width;
+  height: $lineHeight;
+  line-height: $lineHeight;
+  background-color: $white;
+  justify-content: space-between;
+  align-items: center;
+
+  .ct-dropdown-title-container {
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: $border-color;
+    border-radius: $input-border-radius;
+  }
+
+  .ct-dropdown-title {
+    margin-right: 15px;
+  }
+
+  .ct-dropdown-btn-label,
+  .ct-dropdown-title {
+    flex-grow: 1;
+  }
+
+  .down-arrow, .purple-arrow {
+    font-size: $arrowFont;
+    text-align: center;
+    color: $text-medium;
+    width: $arrowWidth;
+    height: 100%;
+    background-image: $dd-button-gradient;
+    border-left: 1px solid $border-color;
+  }
+
+  .down-arrow {
+    border-radius: 0 $input-border-radius $input-border-radius 0;
+  }
+}
+
+@mixin breadcrumb-header {
+  font-size: $font-size-xp;
+  line-height: $font-size-xp;
+  color: $text-light;
+  font-weight: 600;
+  &:after {
+    content: '';
+    display: inline-block;
+    line-height: $font-size-xp;
+  }
+}
+
+@mixin breadcrumb-text {
+  margin-top: 2px;
+  font-size: $font-size-xs;
+  line-height: 19px;
+  color: $text-darkest;
+}
+
+@mixin breadcrumb-secondary {
+  font-size: $font-size-p;
+  line-height: normal;
+  margin-top: -2px;
+  color: $text-dark;
+  &:after, .text-ellipsis:after {
+    content: '';
+    display: inline-block;
+    line-height: $font-size-p;
+  }
+}
+
+@mixin addFilter {
+  font-size: $font-size-xs;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  color: $system-regular;
+  width: fit-content;
+  height: 22px;
+  line-height: 22px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 5px;
+  background-color: $white;
+  border-radius: 30px;
+  cursor: pointer;
+
+  .plus-circle {
+    display: inline-block;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    margin-right: 5px;
+    background-color: $system-regular-bg;
+    border-radius: 50%;
+    vertical-align: text-bottom;
+  }
+
+  .iconFont.plus {
+    font-size: 8px;
+  }
+}
+
+@mixin activeBorder($width: 5px) {
+  position: relative;
+  &:hover {
+    background-color: $white;
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: $width;
+    height: 100%;
+    background-color: $brand-primary;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: -1px;
+  }
+  &.active {
+    background-color: $white;
+    &:before {
+      display: block;
+      opacity: 1;
+      transition: opacity 0.8s;
+    }
+  }
+}
+
+@mixin configurationTable($hover: true) {
+    @include resetUl;
+    .table-row {
+        display: flex;
+        height: 34px;
+        line-height: 34px;
+        border-bottom: 1px solid $border-color;
+        flex-wrap: nowrap;
+        &.selected {
+            color: $text-darkest;
+            font-weight: 600;
+        }
+
+        .suggestion-name-container{
+            padding-right: 10px;
+            padding-left: 20px;
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .suggestion-count-container {
+            text-align: right;
+            min-width: 205px;
+            padding-right: 20px;
+            padding-left: 10px;
+        }
+
+        @if $hover == true {
+            &:hover {
+                background-color: $hover-bg;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .table-header {
+        font-weight: 600;
+        background-color: $bg-dark;
+    }
+}
+
+//used in StepController.scss for
+//components: heatmap-button, pathfinder-button and dd-10 - Replays/Recordings button
+@mixin stickyLink {
+  .sticky-link-comp {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    .sticky-link-full-height {
+        height: 100%;
+    }
+    .sticky-link-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        .sticky & {
+          justify-content: center;
+        }
+    }
+    .sticky-link-text {
+      display: flex;
+      color: $white;
+      width: 100%;
+      height: 25px;
+      line-height: 25px;
+      padding-right: 5px;
+      padding-left: 5px;
+      justify-content: space-between;
+      .sticky & {
+        justify-content: flex-start;
+        padding-right: 0;
+        padding-left: 0;
+        cursor: pointer;
+      }
+    }
+
+    .sticky-link-name {
+      font-size: $font-size-xs;
+      .sticky & {
+          color: $text-dark;
+      }
+    }
+
+    .icon-font {
+      &:not(.down-arrow) {
+        padding-right: 4px;
+        display: none;
+      }
+      &.heatmapico {
+        padding-right: 2px;
+      }
+      &.down-arrow {
+        font-size: 16px;
+        color: $white;
+        padding-left: 2px;
+      }
+      .sticky & {
+          display: inline;
+          color: $text-dark;
+      }
+    }
+  }
+  .sticky &:hover .sticky-link-comp {
+    .sticky-link-name,
+    .icon-font {
+      color: $text-darkest;
+    }
+  }
+}
+
+@mixin selectedNeutral($marginRight: 0) {
+  display: inline-block;
+  color: $white;
+  max-width: 250px;
+  height: 21px;
+  line-height: 21px;
+  margin-right: $marginRight;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: $bg-dirty;
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+  }
+  border-radius: 12px;
+  vertical-align: middle;
+
+  .selected-element {
+    display: inline-block;
+    max-width: 214px; //box width - closeX width - ellipsis width
+    font-size: $font-size-xxs;
+    vertical-align: top;
+  }
+
+  .closeX {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+  }
+}
+
+@mixin user-select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin dd-descriptive {
+    width: 209px;
+    height: auto;
+    padding: 8px 0;
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    display: block;
+    left: unset;
+    top: unset;
+    position: fixed;
+    white-space: normal;
+    margin-top: -6px;
+    
+    .options-item-description {
+        padding: 10px 13px 0 13px;
+    }
+    .options-item-description:not(:last-child) .option-description {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $border-color;
+    }
+    .options-item-description:hover {
+        background-color: $hover-bg;
+        cursor: pointer;
+    }
+    .option-title {
+        font-size: $font-size-xs;
+        color: $black;
+        margin-bottom: 3px;
+        line-height: normal;
+    }
+    .option-description {
+        font-size: $font-size-p;
+        color: $text-medium;
+        line-height: normal;
+        padding-bottom: 10px;
+    }
+ }

@@ -1,0 +1,37 @@
+<svg id="_-e-plane" data-name="-e-plane" xmlns="http://www.w3.org/2000/svg" width="465" height="268" viewBox="0 0 465 268">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                                                                                                                         
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #959595;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 8 6;
+      }
+
+      .cls-3 {
+        fill: #efefef;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M307,80l10,40,9-25L448,18,464,2l-22,9Z"/>
+  <path id="tail" class="cls-2" d="M0,267s7-60.609,56-50c8,1.731,28.061,17.891,53,26,36.509,11.87,61.68-15.385,62-39,0.459-33.818,22.227-54.166,55-44,16.073,4.986,34.667,12.333,59,5s29-38,29-38"/>
+  <path id="left_wing" data-name="left wing" class="cls-3" d="M258,68L464,1,308,85Z"/>
+  <path id="right_wing" data-name="right wing" class="cls-3" d="M464,1L379,113,326,93Z"/>
+  <path class="cls-1" d="M317,119.258L344.4,101"/>
+</svg>
