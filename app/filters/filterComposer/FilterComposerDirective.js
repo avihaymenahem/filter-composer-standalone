@@ -10,6 +10,7 @@ let FilterComposer = () => {
 			filtersList: '=',
 			configuration: '='
 		},
+		controllerAs: 'ctrl',
 		link: (scope, element) => {
 			if (scope.filtersModel.values) {
 				scope.includedFilters = _.chain(scope.filtersModel)

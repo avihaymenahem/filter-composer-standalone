@@ -864,6 +864,11 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+angular-ui-bootstrap@^2.1.1:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-2.5.6.tgz#23937322ec641a6fbee16498cc32452aa199e7c5"
+  integrity sha512-yzcHpPMLQl0232nDzm5P4iAFTFQ9dMw0QgFLuKYbDj9M0xJ62z0oudYD/Lvh1pWfRsukiytP4Xj6BHOSrSXP8A==
+
 angular@1.5.8:
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.5.8.tgz#925a5392b8c212d09572dc446db7e01264e094cb"
@@ -5516,6 +5521,10 @@ uglifyjs-webpack-plugin@^1.2.4:
     uglify-es "^3.3.4"
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
+
+"ui-select@github:ItsikAvidanClicktale/ui-select#0.19.9-CT15":
+  version "0.19.9-CT15"
+  resolved "https://codeload.github.com/ItsikAvidanClicktale/ui-select/tar.gz/5f32a13832ff4799eaa62a856a505d03bdad3445"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"

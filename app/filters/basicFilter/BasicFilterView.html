@@ -1,50 +1,84 @@
-<ng-form class="ct-basic-filter" ng-if="filtersList.length > 0">
-        <div class="ct-basic-filter-element">
-                <ct-search-select ng-show="filtersList.length > 1" no-filtered-data-placeholder="No results found"
-                        selected-placeholder="selected" placeholder="Select metric"
-                        display-prop="displayName" options="filtersList" required="true" events="filterSelect.events"
-                        ng-model="selectedItem">
-                </ct-search-select>
-                <div ng-show="filtersList.length == 1">
-                        {{filtersList[0].displayName}}
-                </div>
-        </div>
-        <div class="ct-basic-filter-element is-container" ng-if="selectedItem.logicalOperators.length > 0">
-                <!-- <dropdown-form selected-model="selectedOperator" options="selectedItem.logicalOperators" extra-settings="operatorSelectConf.settings"
-                        events="operatorSelectConf.events"></dropdown-form> -->
-        </div>
-        <!-- <div ng-switch="selectedItem.dataType" class="specific-filter-container ct-basic-filter-element" ng-class="{ 'full-width': selectedItem.dataType === 'location' }">
-                <app-id-filter ng-switch-when="listId" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
+<ng-form 
+	class="ct-basic-filter" 
+	ng-if="filtersList.length > 0"
+>
+	<div class="ct-basic-filter-element">
+		<ct-search-select 
+			required 
+			ng-show="filtersList.length > 1" 
+			no-filtered-data-placeholder="No results found"
+			selected-placeholder="selected" 
+			placeholder="Select metric" 
+			display-prop="displayName" 
+			options="filtersList" 
+			events="filterSelect.events"
+			ng-model="selectedItem"
+		>
+		</ct-search-select>
+		<div ng-show="filtersList.length == 1">
+			{{filtersList[0].displayName}}
+		</div>
+	</div>
+	<div 
+		class="ct-basic-filter-element is-container"
+		ng-if="selectedItem.logicalOperators.length > 0"
+	>
+		<dropdown-form 
+			selected-model="selectedOperator"
+			options="selectedItem.logicalOperators"
+			extra-settings="operatorSelectConf.settings"
+			events="operatorSelectConf.events"
+		>
+		</dropdown-form>
+	</div>
+	<div 
+		ng-switch="selectedItem.dataType" 
+		class="specific-filter-container ct-basic-filter-element" 
+		ng-class="{ 'full-width': selectedItem.dataType === 'location' }"
+	>
+		<csv-filter 
+			ng-switch-when="listCsv"
+			selected-item="selectedItem"
+			filter-model="filterModel"
+			operator="selectedOperator"
+		>
+		</csv-filter>
+		<div ng-switch-default></div>
+	<!--
+		<app-id-filter 
+			ng-switch-when="listId" 
+			selected-item="selectedItem" 
+			filter-model="filterModel" 
+			operator="selectedOperator"
+		>
+		</app-id-filter>
+		<set-filter ng-switch-when="event" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
+		</set-filter>
+		<set-filter ng-switch-when="pageAttribute" selected-item="selectedItem" filter-model="filterModel"
+				operator="selectedOperator">
+		</set-filter>
+		<set-filter ng-switch-when="dynamicAction" selected-item="selectedItem" filter-model="filterModel"
+				operator="selectedOperator">
+		</set-filter>
+		<span ng-switch-when="integer">
+				<numeric-filter ng-if="!selectedOperator" selected-item="selectedItem" filter-model="filterModel">
+				</numeric-filter>
+		</span>
+		</csv-filter>
+		<percentage-filter ng-switch-when="percentage" selected-item="selectedItem" filter-model="filterModel">
+		</percentage-filter>
+		<seconds-filter ng-switch-when="time" selected-item="selectedItem" filter-model="filterModel">
+		</seconds-filter>
+		<location-filter ng-switch-when="location" selected-item="selectedItem" filter-model="filterModel"
+				operator="selectedOperator" configuration="config">
+		</location-filter>
+		<list-filter ng-switch-when="list" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
+		</list-filter>
+		<boolean-filter ng-switch-when="positiveBoolean" selected-item="selectedItem" filter-model="filterModel">
 
-                </app-id-filter>
-                <set-filter ng-switch-when="event" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
-                </set-filter>
-                <set-filter ng-switch-when="pageAttribute" selected-item="selectedItem" filter-model="filterModel"
-                        operator="selectedOperator">
-                </set-filter>
-                <set-filter ng-switch-when="dynamicAction" selected-item="selectedItem" filter-model="filterModel"
-                        operator="selectedOperator">
-                </set-filter>
-                <span ng-switch-when="integer">
-                        <numeric-filter ng-if="!selectedOperator" selected-item="selectedItem" filter-model="filterModel">
-                        </numeric-filter>
-                </span>
-                <csv-filter ng-switch-when="listCsv" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
-                </csv-filter>
-                <percentage-filter ng-switch-when="percentage" selected-item="selectedItem" filter-model="filterModel">
-                </percentage-filter>
-                <seconds-filter ng-switch-when="time" selected-item="selectedItem" filter-model="filterModel">
-                </seconds-filter>
-                <location-filter ng-switch-when="location" selected-item="selectedItem" filter-model="filterModel"
-                        operator="selectedOperator" configuration="config">
-                </location-filter>
-                <list-filter ng-switch-when="list" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
-                </list-filter>
-                <boolean-filter ng-switch-when="positiveBoolean" selected-item="selectedItem" filter-model="filterModel">
-
-                </boolean-filter>
-                <boolean-filter ng-switch-when="negativeBoolean" selected-item="selectedItem" filter-model="filterModel">
-                </boolean-filter>
-                <div ng-switch-default></div> -->
-        </div>
+		</boolean-filter>
+		<boolean-filter ng-switch-when="negativeBoolean" selected-item="selectedItem" filter-model="filterModel">
+		</boolean-filter>
+		<div ng-switch-default></div> -->
+	</div>
 </ng-form>

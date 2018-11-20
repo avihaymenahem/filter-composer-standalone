@@ -1,0 +1,18 @@
+@import "../../../assets/css/colors";
+@import "../../../assets/css/variables";
+
+.ct-form-has-error {
+    input.ng-invalid + ct-tags .ui-select-container {
+        border-color: $system-alert;
+    }
+}
+
+ct-tags, body {
+    & > .ui-select-container.ui-select-multiple.tagging .ui-select-dropdown {
+        display: none;
+    }
+}
+.csv-hint {
+    font-size: $font-size-xxs;
+    color: $text-medium;
+}

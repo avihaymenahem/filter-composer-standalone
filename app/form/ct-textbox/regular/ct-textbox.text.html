@@ -1,17 +1,33 @@
-<div class="form-control-textbox {{:: className }}" ng-class="{ required: required, hasIcon: icon }">
-    <input ng-disabled="disabled" 
-           name="{{:: name}}" 
-           maxlength="{{:: maxlength}}" 
-           type="text"
-           class="text-input ignore-click no-click"
-           ng-required="required" 
-           autocomplete="off" 
-           ng-model="model" 
-           placeholder="{{:: placeholder}}" 
-           ng-focus="onFocus($event)" 
-           ng-blur="onBlur($event)"
-           ng-change="onChange($event)" 
-           ct-auto="{{::ctAutoId}}-search-input"/>
-    <span ng-if="icon" ng-hide="filledIcon && model" ng-class="{ gray: !model }" class="iconFont ignore-click {{:: icon }}"></span>
-    <span ng-if="filledIcon" ng-hide="!model" ng-click="onReset()" class="iconFont ignore-click {{:: filledIcon }}" ct-auto="{{::ctAutoId}}-search-clear"></span>
+<div 
+    class="form-control-textbox {{:: className }}" 
+    ng-class="{ required: required, hasIcon: icon }"
+>
+    <input 
+        ng-disabled="disabled" 
+        name="{{:: name}}" 
+        maxlength="{{:: maxlength}}" 
+        type="text" 
+        class="text-input ignore-click no-click"
+        ng-required="required" 
+        autocomplete="off" 
+        ng-model="model" 
+        placeholder="{{:: placeholder}}" 
+        ng-focus="onFocus($event)"
+        ng-blur="onBlur($event)" 
+        ng-change="onChange($event)" 
+        ct-auto="{{::ctAutoId}}-search-input" 
+    >
+    <span 
+        ng-if="icon" 
+        ng-hide="filledIcon && model" 
+        ng-class="{ gray: !model }" 
+        class="iconFont ignore-click {{:: icon }}"
+    ></span>
+    <span 
+        ng-if="filledIcon" 
+        ng-hide="!model" 
+        ng-click="onReset()" 
+        class="iconFont ignore-click {{:: filledIcon }}"
+        ct-auto="{{::ctAutoId}}-search-clear"
+    ></span>
 </div>

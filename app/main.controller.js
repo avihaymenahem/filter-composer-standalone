@@ -2,14 +2,16 @@
  * Example Controller
  */
 class MainCtrl {
-    constructor() {
+    constructor(scope) {
         this.controllerName = 'Main Controller';
-        this.filtersList = require('./filters.json');
-        this.filtersModel = {};
-        this.configuration = {
+        scope.filtersList = require('./filters.json');
+        scope.filtersModel = {};
+        scope.configuration = {
             context: undefined
         };
     }
 }
+
+MainCtrl.$inject = ['$scope']
 
 export default MainCtrl;

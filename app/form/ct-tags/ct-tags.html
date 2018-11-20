@@ -1,0 +1,85 @@
+<ui-select 
+    multiple
+    ng-if="tagging"
+    tagging="tagging()"
+    tagging-label="false"
+    skip-focusser="true"
+    class="tagging"
+    ng-model="selectedModel" 
+    on-select="vm.onSelect($item, $model)"
+    on-remove="vm.onRemove($item, $model)"
+    close-on-select="true"
+    spinner-enabled="true"
+    spinner-class="loader"
+    minimum-input-length="1"
+    theme="bootstrap"
+    reset-search-input="true"
+    append-to-body="false"
+    search-enalbed="isMultiple"
+    tagging-tokens="{{taggingTokens}}"
+>
+    <ui-select-match placeholder="{{ placeholder }}">
+        <span title="{{ $item.value }}">
+            {{ $item.value }}
+        </span>
+    </ui-select-match>
+    <ui-select-choices 
+        ng-hide="true"
+        repeat="option in options">    
+    </ui-select-choices>
+    <ui-select-no-choice ng-hide="true">
+        {{ noResultsText || "no results" }}
+    </ui-select-no-choice>
+</ui-select>
+<ui-select 
+    multiple    
+    ng-if="!tagging"
+    tagging="false"
+    tagging-label="false"
+    skip-focusser="true"
+    paste="paste()"
+    ng-click="vm.onClick($select)"
+    ng-model="selectedModel" 
+    on-select="vm.onSelect($item, $select)"
+    on-remove="vm.onRemove($item, $select)"
+    close-on-select="false"
+    minimum-input-length="1"
+    theme="bootstrap"
+    reset-search-input="false"
+    append-to-body="true"
+    search-enalbed="isMultiple"
+    uis-open-close="vm.onOpenClose(isOpen)"
+>
+    <ui-select-match placeholder="{{ placeholder }}">
+        <span title="{{ $item.value }}">
+            {{ $item.value }}
+        </span>
+    </ui-select-match>
+    <ui-select-header >
+        <span>Title</span>
+        <span class="pull-right">Page view 24h</span>
+    </ui-select-header>
+    <ui-select-choices 
+        repeat="option in options | filter: vm.getLocalFilter($select.search)"
+        refresh="vm.onSearch($select.search, $select)"
+        refresh-delay="0"
+    >
+        <span 
+            title="{{ option.value }}" 
+            class="text-ellipsis" 
+            ng-bind-html="vm.encodeHTMLEntities(option.value) | highlight: $select.search"
+        >
+        </span>
+        <span 
+            ng-show="option.count != null" 
+            class="page-view pull-right">
+                ({{ option.count }})
+            </span>
+    </ui-select-choices>
+    <ui-select-no-choice>
+        <ct-loader loading="isSearching"></ct-loader>
+        <span ng-if="vm.canShowNoResults">
+            {{ noResultsText || "no results" }}
+        </span>
+    </ui-select-no-choice>
+</ui-select>

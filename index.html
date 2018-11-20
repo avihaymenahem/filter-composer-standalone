@@ -6,9 +6,9 @@
     <title>filterComposer</title>
 </head>
 <body 
-    ng-app="example" 
-    ng-controller="mainController as ctrl"
     ng-cloak
+    ng-app="CT" 
+    ng-controller="mainController"
 >
     <div class="container">
         <div class="row">
@@ -17,10 +17,10 @@
                 <div class="ct-form">
                     <ng-form>
                         <filter-composer
-                            filters-list="ctrl.filtersList"
-                            filters-model="ctrl.filtersModel"
-                                    configuration="ctrl.configuration"
-                                >
+                            filters-list="filtersList"
+                            filters-model="filtersModel"
+                            configuration="configuration"
+                        >
                         </filter-composer>
                     </ng-form>
                 </div>  
@@ -32,7 +32,7 @@
             <div class="col">
                 <textarea 
                     style="height:480px;width:640px;resize:none"
-                    ng-bind="ctrl.filtersModel | json"
+                    ng-bind="filtersModel | json"
                 >
                 </textarea>
             </div>

@@ -1,0 +1,17 @@
+<input 
+    hidden 
+    required
+    type="hidden" 
+    ng-model="vm.selected[0]" 
+    value="{{vm.selected[0]}}">
+<ct-tags
+    tagging="vm.tagTransform",
+    selected-model="vm.selected"
+    tagging-tokens=","
+    on-select="vm.onSelectValue(item)"
+    on-remove="vm.onDeselectValue(item)"
+    on-open-close="vm.onOpenClose">
+</ct-tags>
+<span class="csv-hint">
+    Visitor IDs must be separated with a comma.
+</span>

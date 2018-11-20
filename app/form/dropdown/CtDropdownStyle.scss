@@ -1,0 +1,94 @@
+@import "../../../assets/css/colors";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/mixins";
+@import "../../../assets/css/reset";
+
+.ct-dropdown {
+  font-size: $font-size-ss;
+
+  .ct-dropdown-btn {
+    @include input;
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ct-dropdown-btn-label {
+      flex-grow: 1;
+    }
+
+    .ct-dropdown-btn-text {
+      width: 100%;
+    }
+
+    .down-arrow {
+      font-size: 17px;
+      text-align: center;
+      color: $text-medium;
+      width: 31px;
+      height: 100%;
+      background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+      border-left: 1px solid $border-color;
+      flex-shrink: 0;
+    }
+  }
+
+  .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+  }
+
+  //header that includes search input
+  .dropdown-header {
+    @include searchBox;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    @include dd-table;
+    z-index: $max-z-index;
+  }
+  //multiselect component
+  .dropdown-menu.dropdown-menu-form {
+    @include dd-simple-searchbar;
+  }
+
+  .checkbox {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 20px;
+
+    .checkboxInput {
+      display: inline-block;
+      margin-right: 10px;
+      position: static;
+      vertical-align: text-top;
+    }
+
+    .checkboxLabel {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+//error indication
+.ct-form-has-error {
+  input.ng-invalid + .ct-dropdown-btn {
+    border-color: $system-alert;
+}
+
+  //.form-title-validation {
+  //  .form-required {
+  //    display: none;
+  //  }
+
+    //.form-validation-failed {
+    //  display: block;
+    //}
+  //}
+}
+
+
+
+
+

@@ -3,13 +3,12 @@ import * as _ from 'lodash';
 function FilterComposerController($scope) {
     let ctrl = this;
     ctrl.scope = $scope;
-
     ctrl.scope.loadingFilters = 0;
-
+    
     ctrl.scope.$on('filterloading', () => {
         ctrl.scope.loadingFilters++;
     });
-
+    
     ctrl.scope.$on('filterready', () => {
         ctrl.scope.loadingFilters--;
     });
@@ -54,7 +53,7 @@ function FilterComposerController($scope) {
     };
 
     ctrl.scope.showRemoveFilter = () => {
-        return (get(ctrl, "scope.excludedFilters.length") || 0) + (get(ctrl, "scope.includedFilters.length") || 0) > 1;
+        return (_.get(ctrl, "scope.excludedFilters.length") || 0) + (_.get(ctrl, "scope.includedFilters.length") || 0) > 1;
     };
 
     ctrl.scope.isLocationFilter = (filterModel) => {
@@ -70,14 +69,14 @@ function FilterComposerController($scope) {
         if (_.keys(logicalOperatorsLabels).indexOf(filterModel.type) >= 0 && filterModel.values && filterModel.values.length > 0) {
             //assuming that all from the same type
             filterId = {
-                id: get(filterModel.values[0], 'metadata.validatorId')
+                id: _.get(filterModel.values[0], 'metadata.validatorId')
             };
         } else {
             filterId = {
-                id: get(filterModel, 'metadata.validatorId')
+                id: _.get(filterModel, 'metadata.validatorId')
             };
         }
-        selectedItem = ctrl.scope.filtersList ? filter(ctrl.scope.filtersList, filterId)[0] || (ctrl.scope.filtersList.length == 1 ? ctrl.scope.filtersList[0] : undefined) : undefined;
+        selectedItem = ctrl.scope.filtersList ? _.filter(ctrl.scope.filtersList, filterId)[0] || (ctrl.scope.filtersList.length == 1 ? ctrl.scope.filtersList[0] : undefined) : undefined;
 
         return selectedItem && selectedItem.dataType === 'location';
     }

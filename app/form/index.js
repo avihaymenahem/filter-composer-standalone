@@ -9,7 +9,7 @@ import _ctTextbox from './ct-textbox';
 // import _ctRules from './ct-rules';
 // import _ctSlider from './ct-slider';
 // import _ctTooltip from './ct-tooltip';
-// import _ctTags from './ct-tags';
+import _ctTags from './ct-tags';
 // import _ctDescriptiveDropdown from './ct-descriptive-dropdown';
 import _ctSearchSelect from './search-select';
 import './ct-form.scss';
@@ -41,10 +41,10 @@ import './ct-form.scss';
 // const ctTooltip = angular.module("CT.Directives.ctTooltip", [])
 //     .directive('ctTooltip', _ctTooltip).name;
 
-// const ctTags = angular.module("CT.Directives.ctTags", [])
-//     .directive('ctTags', _ctTags).name;
+const ctTags = angular.module("CT.Directives.ctTags", [])
+    .directive('ctTags', _ctTags).name;
 
 // const ctDescriptiveDropdown = angular.module("CT.Directives.ctDescriptiveDropdown", [])
 //     .directive('ctDescriptiveDropdown', _ctDescriptiveDropdown).name;
 
-export default [/*ctCheckbox, ctRadioBtn, ctTypeAhead, ctDropdown, ctSelector, ctDeviceSelector, ..._ctRules, ctSlider, ctTooltip, ctTypeAhead2, ctTags,ctDescriptiveDropdown, */..._ctTextbox, _ctSearchSelect];
+export default [/*ctCheckbox, ctRadioBtn, ctTypeAhead, ctDropdown, ctSelector, ctDeviceSelector, ..._ctRules, ctSlider, ctTooltip, ctTypeAhead2, ctDescriptiveDropdown, */..._ctTextbox, ctTags, _ctSearchSelect];

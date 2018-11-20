@@ -1,0 +1,63 @@
+<div 
+    uib-dropdown
+    class="ct-dropdown"  
+    is-open="status.isopen" keyboard-nav="settings.keyboardNav" 
+    ng-style="{width : settings.btnWidth ? settings.btnWidth : auto}"
+>
+    <input 
+        hidden
+        ng-if="settings.required" 
+        type="hidden"  
+        ng-required="settings.required" 
+        ng-model="selectedModel"
+        value="{{selectedModel}}"
+    >
+        <button 
+            uib-dropdown-toggle
+            id="single-button" 
+            type="button" 
+            class="ct-dropdown-btn"  
+            ng-disabled="settings.disabled"
+            ng-click="toggleDropdown()"
+        >
+            <span class="ct-dropdown-btn-label text-ellipsis">
+                {{externalEvents.getProperty(selectedModel, settings.displayProp)}}
+            </span>
+            <div class="icon-font down-arrow"></div>
+    </button>
+    <div 
+        uib-dropdown-menu 
+        class="dropdown-menu"
+        role="menu" 
+        aria-labelledby="single-button" 
+        ng-style="{'min-width':settings.btnWidth ? settings.btnWidth : auto}"
+    >
+        <ul class="options-list">
+            <li 
+                class="options-item" 
+                role="menuitem" 
+                ng-repeat="option in options" 
+                ng-click="onItemSelect(option)"
+            >
+                <a 
+                    href="#" 
+                    class="options-item-link"
+                >
+                    <span 
+                        ct-dropdown-static-include="{{settings.template}}" 
+                        class="left-item text-ellipsis"
+                    >
+                    </span>
+                    <span class="right-item">
+                        <ct-tooltip 
+                            group="CONFIGURATION.MANAGE_SEGMENTS.{{option.tooltip.group}}" 
+                            id="{{option.tooltip.id}}"
+                            placement="right"
+                            ng-if="settings.questionMarks">
+                        </ct-tooltip>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
