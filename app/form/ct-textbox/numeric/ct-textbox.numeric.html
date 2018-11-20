@@ -1,0 +1,17 @@
+<div class="ct-form-control-textBox {{:: className }}" 
+     ng-class="{ required: required }">
+    <input ng-disabled="disabled" 
+        ng-keyup="onKeyup($event)" 
+        ng-blur="onBlur($event)"
+        ng-trim="false"
+        max="{{max}}"
+        min="{{min}}"
+        autocomplete="off" 
+        maxlength="{{:: maxlength}}" 
+        type="number" 
+        ng-required="required" 
+        ng-model="_model"
+        ng-value="model" 
+        placeholder="{{:: placeholder}}"
+        name="numeric-textbox"/>
+</div>
