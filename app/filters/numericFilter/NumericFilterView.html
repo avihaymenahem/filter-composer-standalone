@@ -1,0 +1,28 @@
+<div class="numeric-filter">
+    <dropdown-form 
+        selected-model="patternType"
+        options="operators"
+        extra-settings="operatorSelectConf.settings"
+        events="operatorSelectConf.events"
+        class="dropdown-form-container">
+    </dropdown-form>
+
+    <input 
+        positive-number-format
+        class="numeric-input"
+        ng-class="{'no-units': !configurations.units}"
+        ng-model="filterModel.value"
+        type="number"
+        ng-required="{{true}}"
+        min="{{::configurations.min}}"
+        max="{{::configurations.max}}"
+        ng-min="configurations.min"
+        ng-max="configurations.max"
+    >
+    <span 
+        class="numeric-input-suffix"
+        ng-if="configurations.units"
+    >
+        {{configurations.units}}
+    </span>
+</div>

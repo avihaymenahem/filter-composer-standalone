@@ -9,12 +9,7 @@ function BasicFilterController($scope, $timeout) {
 		else {
 			$scope.selectedOperator = undefined;
 		}
-		//console.log(`BasicFilterCtrl onFilterSelect`)
         const originalDataType = selectedItem.dataType;
-		// Clear all of the filterModel keys so it won't conflict with the new selection
-		// Object.keys($scope.filterModel).forEach((k)=>{
-		// 	delete $scope.filterModel[k];
-		// });
 
 		_.unset($scope.filterModel, 'type');
 		_.unset($scope.filterModel, 'value');
@@ -28,15 +23,11 @@ function BasicFilterController($scope, $timeout) {
 		// ng-switch does not recompile directives if we switch from
 		// one filter to another filter of the same dataType (since ng-switch's logic is basically comparing strings)
 		// so we do this ugly hack to force him to re-evaluate
-		//if ($scope.selectedItem && $scope.selectedItem.dataType === selectedItem.dataType) {
-
-
-			selectedItem.dataType="";
-            $timeout(() => {
-				selectedItem.dataType=originalDataType;
-				$scope.$applyAsync();
-			})
-		//}
+		selectedItem.dataType="";
+		$timeout(() => {
+			selectedItem.dataType = originalDataType;
+			$scope.$applyAsync();
+		})
 	};
 
 	$scope.onOperatorSelect = function (selected) {

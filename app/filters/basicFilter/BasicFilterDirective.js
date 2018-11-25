@@ -1,4 +1,4 @@
-import {filter, get} from 'lodash';
+import * as _ from 'lodash';
 import ctrl from './BasicFilterController';
 
 let BasicFilter = () => {
@@ -22,12 +22,12 @@ let BasicFilter = () => {
 				if (_.keys(scope.logicalOperatorsLabels).indexOf(scope.filterModel.type) >= 0 && scope.filterModel.values && scope.filterModel.values.length > 0) {
 					scope.selectedOperator = scope.filterModel.type;
 					//assuming that all from the same type
-					filterId = {id: get(scope.filterModel.values[0], 'metadata.validatorId')};
+					filterId = {id: _.get(scope.filterModel.values[0], 'metadata.validatorId')};
 				}
 				else {
-					filterId = {id: get(scope.filterModel, 'metadata.validatorId')};
+					filterId = {id: _.get(scope.filterModel, 'metadata.validatorId')};
 				}
-				scope.selectedItem = filter(scope.filtersList, filterId)[0] || (scope.filtersList.length == 1 ? scope.filtersList[0] : undefined);
+				scope.selectedItem = _.filter(scope.filtersList, filterId)[0] || (scope.filtersList.length == 1 ? scope.filtersList[0] : undefined);
 			};
 
 			init()

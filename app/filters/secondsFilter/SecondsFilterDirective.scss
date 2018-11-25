@@ -1,0 +1,36 @@
+@import "../../../assets/css/colors";
+
+.seconds-filter {
+  display: flex;
+  justify-content: flex-start;
+
+  .numeric-filter-container {
+    width: 105px;
+    flex-basis: 105px;
+  }
+
+  .numeric-filter {
+    .numeric-input,
+    .numeric-input-suffix {
+      display: none;
+    }
+  }
+
+  input.numeric-input[type=number] {
+    width: 105px;
+    margin-left: 10px;
+    padding-right: 0;
+    flex-basis: 105px;
+    flex-shrink: 1;
+    &.ng-invalid {
+      border: 1px solid $border-color;
+    }
+  }
+
+  .numeric-input-suffix {
+    font-size: 13px;
+    width: 46px;
+    margin-left: 10px;
+    line-height: 31px;
+  }
+}

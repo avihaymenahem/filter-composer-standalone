@@ -1,0 +1,14 @@
+<div class="seconds-filter">
+    <numeric-filter selected-item="selectedItem" filter-model="filterModel" configurations="configurations" class="numeric-filter-container"></numeric-filter>
+    <input class="numeric-input"
+           ng-model="filterModel.value"
+           type="number"
+           ng-required="{{true}}"
+           min="{{::configurations.min}}"
+           max="{{::configurations.max}}"
+           ng-min="configurations.min"
+           ng-max="configurations.max"
+           positive-number-format
+           time-number>
+    <span class="numeric-input-suffix" ng-if="configurations.units">{{configurations.units}}</span>
+</div>

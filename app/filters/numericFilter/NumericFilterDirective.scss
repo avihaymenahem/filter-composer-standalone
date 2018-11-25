@@ -1,0 +1,32 @@
+@import "../../../assets/css/colors";
+
+.numeric-filter{
+  display: flex;
+  justify-content: flex-start;
+
+  .dropdown-form-container {
+    width: 105px;
+    flex-basis: 105px;
+  }
+
+  input.numeric-input[type=number] {
+    width: 105px;
+    margin-left: 10px;
+    padding-right: 0;
+    flex-basis: 105px;
+    flex-shrink: 1;
+    &.ng-invalid {
+      border: 1px solid $border-color;
+    }
+    &.no-units {
+      width: calc(100% - 105px - 10px);
+    }
+  }
+
+  .numeric-input-suffix {
+    width: 46px;
+    margin-left: 10px;
+    line-height: 31px;
+  }
+
+}

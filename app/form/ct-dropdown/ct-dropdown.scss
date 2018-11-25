@@ -1,0 +1,30 @@
+@import "../../../assets/css/variables";
+@import "../../../assets/css/colors";
+@import "../../../assets/css/mixins";
+
+.ct-dropdown-container {
+  @include ct-dropdown;
+  position: relative;
+
+  &.isOpen {
+    z-index: 999999;
+  }
+
+  .ct-dropdown-title-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .ct-dropdown-options-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .options-list {
+    margin-top: 33px;
+  }
+}
