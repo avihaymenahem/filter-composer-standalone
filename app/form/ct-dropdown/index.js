@@ -2,7 +2,7 @@ require('./ct-dropdown.scss');
 import ctDropdownController from './ct-dropdown.controller';
 
 var template = require('./ct-dropdown.html');
-export default () =>  {
+const ctDropdown = () =>  {
   return {
     restrict: 'E',
     scope: {
@@ -16,3 +16,6 @@ export default () =>  {
     template
   };
 };
+ 
+export default angular.module("CT.Directives.ctDropdown", [])
+    .directive('ctDropdown', ctDropdown).name;

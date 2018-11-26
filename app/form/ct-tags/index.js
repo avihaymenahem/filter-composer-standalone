@@ -3,7 +3,7 @@ import ctrl from './ct-tags.controller';
 
 const tpl = require('./ct-tags.html');
 
-export default () => ({
+const ctTags = () => ({
     restrict: 'E',
     template: tpl,
     scope: {
@@ -24,3 +24,6 @@ export default () => ({
     controller: ['$scope', '$element', ctrl],
     controllerAs: 'vm',
 });
+
+export default angular.module("CT.Directives.ctTags", [])
+    .directive('ctTags', ctTags).name;

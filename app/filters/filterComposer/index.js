@@ -1,5 +1,5 @@
 import './FilterComposerDirective.scss';
 import FilterComposer from './FilterComposerDirective';
 
-export default angular.module('CT.Components.Filters', [])
+export default angular.module('CT.Components.Filters.Composer', [])
     .directive('filterComposer', FilterComposer).name;

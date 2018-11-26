@@ -26,9 +26,6 @@ import './ct-form.scss';
 // const ctTypeAhead2 = angular.module("CT.Directives.ctTypeAhead2", [])
 //     .directive('ctTypeahead2', _ctTypeahead2).name;
 
-const ctDropdown = angular.module("CT.Directives.ctDropdown", [])
-    .directive('ctDropdown', _ctDropdown).name;
-
 // const ctSelector = angular.module("CT.Directives.ctSelector", [])
 //     .directive('ctSelector', _ctSelector).name;
 
@@ -41,10 +38,7 @@ const ctDropdown = angular.module("CT.Directives.ctDropdown", [])
 // const ctTooltip = angular.module("CT.Directives.ctTooltip", [])
 //     .directive('ctTooltip', _ctTooltip).name;
 
-const ctTags = angular.module("CT.Directives.ctTags", [])
-    .directive('ctTags', _ctTags).name;
-
 // const ctDescriptiveDropdown = angular.module("CT.Directives.ctDescriptiveDropdown", [])
 //     .directive('ctDescriptiveDropdown', _ctDescriptiveDropdown).name;
 
-export default [/*ctCheckbox, ctRadioBtn, ctTypeAhead, ctSelector, ctDeviceSelector, ..._ctRules, ctSlider, ctTooltip, ctTypeAhead2, ctDescriptiveDropdown, */..._ctTextbox, ctTags, _ctSearchSelect, ctDropdown];
+export default [/*ctCheckbox, ctRadioBtn, ctTypeAhead, ctSelector, ctDeviceSelector, ..._ctRules, ctSlider, ctTooltip, ctTypeAhead2, ctDescriptiveDropdown, */..._ctTextbox, _ctTags, _ctSearchSelect, _ctDropdown];

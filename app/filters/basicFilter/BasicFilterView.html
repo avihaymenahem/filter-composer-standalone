@@ -63,6 +63,18 @@
             filter-model="filterModel"
         >
         </seconds-filter>
+        <boolean-filter 
+            ng-switch-when="positiveBoolean"
+            selected-item="selectedItem"
+            filter-model="filterModel"
+        >
+        </boolean-filter>
+        <boolean-filter 
+            ng-switch-when="negativeBoolean"
+            selected-item="selectedItem"
+            filter-model="filterModel"
+        >
+        </boolean-filter>
         <div ng-switch-default></div>
     <!--
         </app-id-filter>
@@ -78,12 +90,6 @@
                 operator="selectedOperator" configuration="config">
         </location-filter>
         <list-filter ng-switch-when="list" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
-        </list-filter>
-        <boolean-filter ng-switch-when="positiveBoolean" selected-item="selectedItem" filter-model="filterModel">
-
-        </boolean-filter>
-        <boolean-filter ng-switch-when="negativeBoolean" selected-item="selectedItem" filter-model="filterModel">
-        </boolean-filter>
-        <div ng-switch-default></div> -->
+        </list-filter> -->
     </div>
 </ng-form>
