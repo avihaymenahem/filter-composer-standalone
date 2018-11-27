@@ -1,0 +1,44 @@
+{
+    "dimension": "appid",
+    "data": [{
+        "name": "CT4APPS",
+        "id": 2,
+        "count": 0
+    }, {
+        "name": "CT4APPS_2",
+        "id": 3,
+        "count": 0
+    }, {
+        "name": "CT4APPS_2",
+        "id": 4,
+        "count": 0
+    }, {
+        "name": "App Name",
+        "id": 5,
+        "count": 0
+    }, {
+        "name": "App Name 2",
+        "id": 6,
+        "count": 0
+    }, {
+        "name": "App Name 3",
+        "id": 7,
+        "count": 0
+    }, {
+        "name": "appsettingsname888",
+        "id": 8,
+        "count": 0
+    }, {
+        "name": "App Name 5",
+        "id": 9,
+        "count": 0
+    }, {
+        "name": "App Name 6",
+        "id": 10,
+        "count": 0
+    }, {
+        "name": "THD",
+        "id": 1014,
+        "count": 0
+    }]
+}

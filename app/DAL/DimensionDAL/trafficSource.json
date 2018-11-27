@@ -1,0 +1,19 @@
+{
+    "dimension": "trafficsource",
+    "data": [{
+        "count": 1183,
+        "value": "direct"
+    }, {
+        "count": 97,
+        "value": "qatest.co.nf"
+    }, {
+        "count": 13,
+        "value": "search.yahoo.com"
+    }, {
+        "count": 0,
+        "value": "next-integ91-autoapp-p1.ctqatest.info"
+    }, {
+        "count": 0,
+        "value": "ve-cec-i2.app.clicktale.com"
+    }]
+}

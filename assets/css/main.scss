@@ -11,3 +11,46 @@
 @import "_boxing";
 @import "_accessibility";
 $icon-font-path : "/assets/fonts/";
+
+.container {
+    font-family: Open Sans,sans-serif;
+    font-size: 12px;
+}
+
+.data-content {
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: $bg-dark;
+    color: $text-medium;
+    display: inline-block;
+    line-height: unset;
+}
+.form-subject {
+    display: inline-block;
+    color: $text-dark;
+    max-width: 100%;
+    height: 31px;
+    line-height: 31px;
+    flex-grow: 1;
+
+    .value-radio {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    .ct-form-control-radioButton {
+        font-size: $font-size-ss;
+        font-weight: normal;
+    }
+}
+.form-subject {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+
+    .included-filters {
+        margin-top: 0;
+    }
+}

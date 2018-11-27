@@ -36,6 +36,13 @@
         class="specific-filter-container ct-basic-filter-element" 
         ng-class="{ 'full-width': selectedItem.dataType === 'location' }"
     >
+        <app-id-filter
+            ng-switch-when="listId"
+            selected-item="selectedItem"
+            filter-model="filterModel"
+            operator="selectedOperator"
+        >
+        </app-id-filter>
         <csv-filter 
             ng-switch-when="listCsv"
             selected-item="selectedItem"
@@ -83,18 +90,23 @@
             configuration="config"
         >
         </location-filter>
+        <list-filter 
+            ng-switch-when="list"
+            selected-item="selectedItem" 
+            filter-model="filterModel" 
+            operator="selectedOperator"
+        >
+        </list-filter>
         <div ng-switch-default></div>
     <!--
-        </app-id-filter>
-        <set-filter ng-switch-when="event" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
+        <set-filter ng-switch-when="event" 
+        selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
         </set-filter>
         <set-filter ng-switch-when="pageAttribute" selected-item="selectedItem" filter-model="filterModel"
                 operator="selectedOperator">
         </set-filter>
         <set-filter ng-switch-when="dynamicAction" selected-item="selectedItem" filter-model="filterModel"
                 operator="selectedOperator">
-        </set-filter>	
-        <list-filter ng-switch-when="list" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
-        </list-filter> -->
+        </set-filter> -->
     </div>
 </ng-form>

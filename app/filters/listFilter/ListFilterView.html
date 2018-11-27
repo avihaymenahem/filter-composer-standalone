@@ -1,0 +1,27 @@
+<!-- <div>
+    <dropdown-multi-select 
+        checkboxes="true"
+        options="availableValues.values"
+        selected-model="value"
+        extra-settings="multiselectConfig.settings"
+        events="multiselectConfig.events">
+    </dropdown-multi-select>
+</div> -->
+<input 
+    hidden 
+    required 
+    type="hidden" 
+    ng-model="vm.selected[0]" 
+    value="{{vm.selected[0]}}"
+>
+<ct-tags
+    selected-model="vm.selected"
+    options="availableValues.values"
+    do-search="vm.onSearchResults(term)"
+    on-select="vm.onSelectValue(item)"
+    on-remove="vm.onDeselectValue(item)"
+    placeholder="Search..."
+    no-results-text="No results found"
+    is-searching="vm.isSearching"
+    use-local-filter="vm.useLocalFilter">
+</ct-tags>

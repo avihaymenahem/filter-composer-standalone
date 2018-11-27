@@ -1,0 +1,10 @@
+{
+    "dimension": "browser",
+    "data": [{
+        "count": 1142,
+        "value": "Chrome"
+    }, {
+        "count": 178,
+        "value": "Firefox"
+    }]
+}

@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": "pageAttribute",
         "field": "pageAttribute",
         "tooltip": {
@@ -633,5 +632,37 @@
             "segment",
             "population"
         ]
+    },
+    {
+        "id": "nativeAppId",
+        "field": "appId",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "nativeAppName"
+        },
+        "aggregation": {
+            "level": "pageView",
+            "type": "count"
+        },
+        "patternType": "equals",
+        "logicalOperators": ["OR"],
+        "displayName": "Application Name New",
+        "dataType": "listId",
+        "metricType": "native",
+        "availability": ["population"]
+    },
+    {
+        "id": "adobeVisitorSegments",
+        "field": "adobeVisitorSegments",
+        "tooltip": {
+            "group": "filterModel_tooltips",
+            "id": "adobeVisitorSegments"
+        },
+        "logicalOperators": ["AND", "OR"],
+        "displayName": "adobe Visitor Segments",
+        "dataType": "list",
+        "metricType": "web",
+        "availability": ["segment", "customSegment", "action", "population"]
     }
+
 ]
