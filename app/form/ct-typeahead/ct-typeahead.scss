@@ -1,0 +1,128 @@
+@import '../../../assets/css/colors';
+@import '../../../assets/css/variables';
+
+$line-height: 26px;
+
+[uib-typeahead-popup].dropdown-menu {
+  z-index    : 99999999999;
+  max-height : 260px;
+  overflow   : auto;
+  max-width  : 600px;
+  margin: 2px 0 0 0;
+  padding: 0;
+
+  &> li.uib-typeahead-match,
+  & > .active {
+    font-size: $font-size-xs;
+    color: $text-dark;
+    height: $line-height;
+    line-height: $line-height;
+    &> a {
+      max-width: 454px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      height: $line-height;
+      line-height: $line-height;
+      padding: 0 15px;
+      &,
+      &:focus,
+      &:hover {
+        color: $text-dark;
+        font-weight: 400;
+        background-image: none;
+        background-color: transparent;
+      }
+    }
+    &:hover {
+      background-color: $hover-bg;
+    }
+  }
+
+  //scroll bar in webkit based browsers for all configuration windows
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb;
+    border-radius: 15px 30px 30px 15px;
+    border-left: none;
+    border-right: 3px solid $bg-dark;
+    border-top: none;
+    border-bottom: none;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb;
+  }
+}
+
+
+ct-typeahead {
+  display: flex;
+  flex: 1;
+
+  .ct-typeahed-wrapper {
+    width: 100%;
+    .ct-form-control-typeahead {
+      width: 100%;
+      position: relative;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      &.ng-invalid.ng-touched {
+        border-bottom: 1px solid red !important;
+      }
+      &:hover,
+      &:focus {
+        border-bottom: 1px solid $c-2
+      }
+    }
+    .dropdown-menu {
+      max-width  : 600px;
+      z-index    : $max-z-index;
+    }
+
+    .ct-typehead-load {
+      width: 100%;
+      height: 0;
+      overflow: visible;
+      &-list {
+        width: 100%;
+        height: 260px;
+      }
+      &-item {
+        a {
+          max-width: 454px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          width: 100%;
+          height: $line-height;
+          line-height: $line-height;
+          padding: 0 15px;
+          &,
+          &:focus,
+          &:hover {
+            color: $text-dark;
+            font-weight: 400;
+            background-image: none;
+            background-color: transparent;
+          }
+        }
+        &:hover {
+          background-color: $hover-bg;
+        }  
+      }
+      &-loading {
+        text-align: center;
+      }
+    }
+  }
+}
+
+

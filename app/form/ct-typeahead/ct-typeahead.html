@@ -1,0 +1,49 @@
+<div class="ct-typeahed-wrapper">
+    <input 
+        type="text"
+        ng-class="{ focused: isFocused }"
+        class="ct-form-control-typeahead"
+        uib-typeahead="value.name for value in values($viewValue) | limitTo:8"
+        ng-model="tempModel.name"
+        autocomplete="off"
+        name="{{:: name }}"
+        ng-keyup="_keyup()"
+        ng-blur="isFocused = false"
+        ng-focus="isFocused = true"
+        has-focus="isFocused"
+        exists-in="existsInValidation && values"
+        ng-required="isRequired"
+        placeholder="{{:: placeholder }}"
+        typeahead-append-to-body="true"
+        ng-change="onSelect($item, $model, $label, $event)"
+        typeahead-loading="loadingResults"
+        typeahead-no-results="noResults"
+        typeahead-on-select="onSelect($item, $model, $label, $event)"
+    >
+    <div 
+        uib-dropdown
+        ng-if="isFocused && (noResults || loadingResults)"
+        auto-close="disabled"
+        is-open="true"
+        uib-dropdown-toggle class="ct-typehead-load-window"
+    >
+        <ul class="dropdown-menu ct-dropdown ct-typehead-load-list">
+            <li 
+                ng-if="noResults"
+                class="ct-typehead-load-item"
+            >
+                <a href>
+                    no results
+                </a>
+            </li>
+            <li 
+                ng-if="loadingResults"
+                class="ct-typehead-load-item ct-typehead-load-loading"
+            >
+                <a href>
+                    loading ...
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

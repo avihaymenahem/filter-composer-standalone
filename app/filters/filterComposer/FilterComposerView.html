@@ -69,13 +69,14 @@
                         ng-if="!$first">
                         and
                     </span>
-                    <!-- <basic-filter filter-model="filter"
-                                  class="ct-filter-item"
-                                  ng-class='{ml3:$first && excludedFilters.length>1}'
-                                  filters-list="filtersList"
-                                  config="excludedConfiguration">
-                    </basic-filter> -->
-                    <div>BASIC-FILTER</div>
+                    <basic-filter 
+                        filter-model="filter"
+                        class="ct-filter-item"
+                        ng-class='{ml3:$first && excludedFilters.length>1}'
+                        filters-list="filtersList"
+                        config="excludedConfiguration"
+                    >
+                    </basic-filter>
                     <span 
                         class="icon-font icon-trash"
                         ng-if="!isLocationFilter(filter)"

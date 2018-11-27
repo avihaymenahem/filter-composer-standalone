@@ -1,11 +1,13 @@
+import filterComposer from './filterComposer';
+import basicFilter from './basicFilter';
+
 import booleanFilter from './booleanFilter';
 import csvFilter from './csvFilter';
 import numericFilter from './numericFilter';
 import percentageFilter from './percentageFilter';
 import secondsFilter from './secondsFilter';
+import locationFilter from './locationFilter';
 
-import filterComposer from './filterComposer';
-import basicFilter from './basicFilter';
 
 export default [
     booleanFilter,
@@ -13,6 +15,7 @@ export default [
     numericFilter,
     percentageFilter,
     secondsFilter,
+    locationFilter,
     filterComposer,
     basicFilter
 ]

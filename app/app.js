@@ -15,6 +15,9 @@ import mainController from './main.controller.js';
 import loader from './loader';
 import clickOutside from './clickOutside';
 
+/** DAL */
+import DimensionDAL from './DAL/DimensionDAL';
+
 /** form */
 import formComponents from './form';
 
@@ -31,6 +34,7 @@ import filters from './filters';
 let components = [
     'ui.bootstrap',
     'ui.select',
+    DimensionDAL,
     clickOutside,
     loader,
     ...filters,

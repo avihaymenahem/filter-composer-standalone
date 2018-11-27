@@ -75,6 +75,14 @@
             filter-model="filterModel"
         >
         </boolean-filter>
+        <location-filter 
+            ng-switch-when="location"
+            selected-item="selectedItem"
+            filter-model="filterModel"
+            operator="selectedOperator"
+            configuration="config"
+        >
+        </location-filter>
         <div ng-switch-default></div>
     <!--
         </app-id-filter>
@@ -86,9 +94,6 @@
         <set-filter ng-switch-when="dynamicAction" selected-item="selectedItem" filter-model="filterModel"
                 operator="selectedOperator">
         </set-filter>	
-        <location-filter ng-switch-when="location" selected-item="selectedItem" filter-model="filterModel"
-                operator="selectedOperator" configuration="config">
-        </location-filter>
         <list-filter ng-switch-when="list" selected-item="selectedItem" filter-model="filterModel" operator="selectedOperator">
         </list-filter> -->
     </div>

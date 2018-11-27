@@ -1,9 +1,10 @@
-// import _ctCheckbox from './ct-checkbox';
+import _ctCheckbox from './ct-checkbox';
 // import _ctRadioButton from './ct-radio-button';
 import _ctTextbox from './ct-textbox';
-// import _ctTypeahead from './ct-typeahead';
+import _ctTypeahead from './ct-typeahead';
 // import _ctTypeahead2 from './ct-typeahead2';
 import _ctDropdown from './ct-dropdown';
+import _ctDropdownForm from './dropdown';
 // import _ctSelector from './ct-selector';
 // import _ctDeviceSelector from './ct-device-selector';
 // import _ctRules from './ct-rules';
@@ -41,4 +42,5 @@ import './ct-form.scss';
 // const ctDescriptiveDropdown = angular.module("CT.Directives.ctDescriptiveDropdown", [])
 //     .directive('ctDescriptiveDropdown', _ctDescriptiveDropdown).name;
 
-export default [/*ctCheckbox, ctRadioBtn, ctTypeAhead, ctSelector, ctDeviceSelector, ..._ctRules, ctSlider, ctTooltip, ctTypeAhead2, ctDescriptiveDropdown, */..._ctTextbox, _ctTags, _ctSearchSelect, _ctDropdown];
+export default [/*ctRadioBtn, ctSelector, ctDeviceSelector, ..._ctRules, ctSlider, ctTooltip, ctTypeAhead2, ctDescriptiveDropdown, */..._ctTextbox,
+    _ctCheckbox, _ctTypeahead, _ctTags, _ctSearchSelect, _ctDropdown, _ctDropdownForm];

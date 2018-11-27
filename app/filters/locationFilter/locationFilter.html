@@ -1,0 +1,74 @@
+<div class="urls-filter-container">
+    <suggestion-modal 
+            ng-if="showSuggestions" 
+            suggestions="suggestions" 
+            filter="suggestionsFilterText"
+            on-close="closeSuggestionModal(selectedSuggestion)" 
+            modal-title="Select Page by URL"
+            search-placeholder="Search..."
+            sub-title="Select URL from the list below" 
+            column-title="Page URL">
+    </suggestion-modal>
+    <div 
+        class="ruleUrlContainer" 
+        ng-repeat="url in urls track by $index"
+    >
+        <div class="ruleUrlWrapper">
+            <dropdown-form selected-model="url.patternType"
+                           options="urlTypes"
+                           extra-settings="urlTypeSelectConf.settings"
+                           events="urlTypeSelectConf.events"
+                           class="location-dd-button">
+            </dropdown-form>
+
+            <ct-typeahead 
+                ng-init="_onSelect = getUrlSelectCallback($index);_getValues = getLocationValues(url);"
+                values="_getValues"
+                placeholder={{labels.item_placeholder}}
+                model="{ name: url.value }"
+                name="urlFilter"
+                is-required="true"
+                exists-in-validation="false"
+                on-keyup="onUrlTyped(url, event)"
+                on-select="_onSelect"
+            >
+            </ct-typeahead>
+            <div 
+                class="popupButtonContainer"
+                ng-if="isWeb"
+            >
+                <span 
+                    class="icon-font more-options-hollow" 
+                    ng-class="{ disabled: disableSuggestionsButton }" ng-click="openUrlSuggestionsDialog(url)">
+                </span>
+            </div>
+            <span 
+                class="icon-font icon-trash"
+                ng-if="(configuration.showClose() || urls.length > 1) && (isPageSet() || isPluralURLs())"
+                ng-click="removeUrl($index)"
+                data-ct-tooltip
+                data-ct-tooltip-direction="right"
+                data-ct-tooltip-group="CONFIGURATION.COMMON"
+                data-ct-tooltip-id="deleteItem">
+            </span>
+        </div>
+
+        <div 
+            class="ignoreQueryStringContainer"
+            ng-if="isWeb"
+        >
+            <ct-checkbox 
+                label="Ignore query strings" model="url.ignoreQueryString" 
+                parent-component="ignoreQueryString"
+            >
+            </ct-checkbox>
+        </div>
+    </div>
+    <a 
+        class="addUrlContainer" 
+        ng-click="addUrl()"
+    >
+        <div class="plus-circle iconFont plus"></div>
+        {{:: labels.add }}
+    </a>
+</div>
