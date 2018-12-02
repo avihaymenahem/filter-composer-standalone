@@ -864,6 +864,11 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+angular-sanitize@1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.5.8.tgz#1832f69487ee820a21cbe30055a8fb1bdf297ab8"
+  integrity sha1-GDL2lIfuggohy+MAVaj7G98perg=
+
 angular-ui-bootstrap@^2.1.1:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-2.5.6.tgz#23937322ec641a6fbee16498cc32452aa199e7c5"
