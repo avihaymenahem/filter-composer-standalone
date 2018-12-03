@@ -1,13 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpackDefBuilder = require('webpack-plugin-def-builder');
 ;
 const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
     entry: {
-        vendor: ['angular'],
-        app:'./app/app.js'
+        // vendor: ['angular'],
+        app:'./app/index.js'
     },
     output: {
         path: __dirname + '/dist',
@@ -64,24 +65,35 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            chunks: 'all',
             cacheGroups: {
-                styles: {
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true
-                }
+                default: false
             }
-        }
+        },
+        runtimeChunk: false
     },
+    // optimization: {
+    //     splitChunks: {
+    //         chunks: 'all',
+    //         cacheGroups: {
+    //             styles: {
+    //                 name: 'styles',
+    //                 test: /\.css$/,
+    //                 chunks: 'all',
+    //                 enforce: true
+    //             }
+    //         }
+    //     }
+    // },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: 'index.html'
-        }),
+        // new HtmlWebpackPlugin({
+        //     template: 'index.html'
+        // }),
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: "assets/[name].css",
+        }),
+        new webpackDefBuilder({
+            basePath: '/'
         })
     ],
     stats: {

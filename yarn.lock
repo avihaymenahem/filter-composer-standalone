@@ -5009,6 +5009,11 @@ signal-exit@^3.0.0:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
+single-spa-angularjs@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/single-spa-angularjs/-/single-spa-angularjs-3.0.1.tgz#92329982ec8811cfd80a657b2c7aeebad1c0f5d7"
+  integrity sha1-kjKZguyIEc/YCmV7LHruutHA9dc=
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -5793,6 +5798,11 @@ webpack-log@^2.0.0:
   dependencies:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
+
+webpack-plugin-def-builder@^1.0.9:
+  version "1.0.9"
+  resolved "http://rg-nexus:8080/nexus/content/groups/nexus-npm-virtual/webpack-plugin-def-builder/-/webpack-plugin-def-builder-1.0.9.tgz#2efe595b7c0f2baf5f754e4052ac20ea95c60e15"
+  integrity sha512-yy/bHRg+oEEV3pSPr4gRniE5hJrNQXFg/mU4ka6oDQIs1m4/TELGr7fBaMTx2aYyo+gvYLU6A5R745N5e2z60Q==
 
 webpack-sources@^1.1.0, webpack-sources@^1.3.0:
   version "1.3.0"
