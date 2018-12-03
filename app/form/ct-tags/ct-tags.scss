@@ -79,7 +79,7 @@ $line-height: 26px;
         white-space: normal;
         overflow: visible;
         max-width: 611px;
-
+        
         &.open {
             border: 1px solid $input-focus;
             box-shadow: inset 0 0 0 3px rgba(136, 130, 216, 0.15);
@@ -88,6 +88,7 @@ $line-height: 26px;
         > div:first-child {
             max-height: 90px;
             overflow: auto;
+            padding-top: 5px;
             margin-right: -10px;
         }
 
@@ -117,7 +118,7 @@ $line-height: 26px;
             max-width: 370px;
             height: 21px;
             line-height: 21px;
-            margin: 0;
+            margin: 0 0 7px 0;
             padding: 0 10px;
             border-radius: 14px;
             background: rgba(137, 104, 208, 0.2);
@@ -270,6 +271,10 @@ $line-height: 26px;
             content: 'N';
             position: absolute;
             right: 5px;
+            height: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
